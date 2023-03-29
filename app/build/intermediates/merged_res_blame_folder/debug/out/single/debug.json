@@ -12,24 +12,24 @@
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-31:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-29:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-31:\\mipmap-mdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-29:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-31:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-29:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-31:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-29:/layout_activity_main.xml.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-31:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-29:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-31:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-29:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-31:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-29:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-31:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",

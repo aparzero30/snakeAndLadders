@@ -28,6 +28,7 @@ id frame2
 id frame3
 id frame4
 id frame5
+id home
 id leaderboard
 id leftGuideline
 id quit

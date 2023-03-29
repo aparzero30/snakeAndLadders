@@ -11,6 +11,7 @@ color start_color
 color teal_200
 color teal_700
 color white
+drawable board_board
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable leader_back
@@ -20,6 +21,7 @@ drawable main_sound
 drawable main_trophy
 id add_button
 id back
+id board
 id bottomGuideline
 id fragment_container
 id fragment_container_leaderboard
@@ -31,8 +33,14 @@ id frame5
 id home
 id leaderboard
 id leftGuideline
+id player1
+id player2
+id player3
+id player4
+id player5
 id quit
 id rightGuideline
+id roll_button
 id sound
 id start_button
 id top1
@@ -44,6 +52,7 @@ id topGuideline
 id trophy
 layout activity_leader
 layout activity_main
+layout fragment_board
 layout fragment_leaderboard_fragment
 mipmap ic_launcher
 mipmap ic_launcher_round

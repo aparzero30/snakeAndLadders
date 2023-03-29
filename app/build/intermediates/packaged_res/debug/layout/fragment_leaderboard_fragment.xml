@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_container"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_color"
+    tools:context=".leaderboard_fragment">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/leader_back"
+        app:layout_constraintStart_toEndOf="@+id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="10dp" />
+
+    <TextView
+        android:id="@+id/leaderboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginTop="13dp"
+        android:fontFamily="monospace"
+        android:text="LeaderBoard"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="500dp"
+        android:layout_height="60dp"
+        android:background="@color/start_color"
+        app:layout_constraintTop_toTopOf="@+id/leaderboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/top1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/leader_wizard"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="13dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Text"
+            app:layout_constraintStart_toEndOf="@+id/top1"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="80dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame2"
+        android:layout_width="500dp"
+        android:layout_height="60dp"
+        android:background="@color/start_color"
+        app:layout_constraintTop_toTopOf="@+id/frame1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="65dp">
+
+        <ImageView
+            android:id="@+id/top2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/leader_wizard"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="13dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Text"
+            app:layout_constraintStart_toEndOf="@+id/top1"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="80dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame3"
+        android:layout_width="500dp"
+        android:layout_height="60dp"
+        android:background="@color/start_color"
+        app:layout_constraintTop_toTopOf="@+id/frame2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="65dp">
+
+        <ImageView
+            android:id="@+id/top3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/leader_wizard"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="13dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Text"
+            app:layout_constraintStart_toEndOf="@+id/top1"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="80dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame4"
+        android:layout_width="500dp"
+        android:layout_height="60dp"
+        android:background="@color/start_color"
+        app:layout_constraintTop_toTopOf="@+id/frame3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="65dp">
+
+        <ImageView
+            android:id="@+id/top4"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/leader_wizard"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="13dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Text"
+            app:layout_constraintStart_toEndOf="@+id/top1"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="80dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame5"
+        android:layout_width="500dp"
+        android:layout_height="60dp"
+        android:background="@color/start_color"
+        app:layout_constraintTop_toTopOf="@+id/frame4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="65dp">
+
+        <ImageView
+            android:id="@+id/top5"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/leader_wizard"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="13dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Text"
+            app:layout_constraintStart_toEndOf="@+id/top1"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="80dp"/>
+
+    </FrameLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

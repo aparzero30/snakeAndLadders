@@ -21,6 +21,8 @@ drawable main_trophy
 id add_button
 id back
 id bottomGuideline
+id fragment_container
+id fragment_container_leaderboard
 id frame1
 id frame2
 id frame3
@@ -41,9 +43,11 @@ id topGuideline
 id trophy
 layout activity_leader
 layout activity_main
+layout fragment_leaderboard_fragment
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string hello_blank_fragment
 style Theme.SnakeAndLadder
 xml backup_rules
 xml data_extraction_rules

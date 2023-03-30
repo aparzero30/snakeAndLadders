@@ -52,9 +52,6 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Guideline rightGuideline;
 
   @NonNull
-  public final AppCompatImageView sound;
-
-  @NonNull
   public final AppCompatButton startButton;
 
   @NonNull
@@ -68,9 +65,8 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull ConstraintLayout fragmentContainerLeaderboard, @NonNull FrameLayout home,
       @NonNull TextView leaderboard, @NonNull Guideline leftGuideline,
       @NonNull RecyclerView playersList, @NonNull AppCompatImageView quit,
-      @NonNull Guideline rightGuideline, @NonNull AppCompatImageView sound,
-      @NonNull AppCompatButton startButton, @NonNull Guideline topGuideline,
-      @NonNull AppCompatImageView trophy) {
+      @NonNull Guideline rightGuideline, @NonNull AppCompatButton startButton,
+      @NonNull Guideline topGuideline, @NonNull AppCompatImageView trophy) {
     this.rootView = rootView;
     this.addButton = addButton;
     this.bottomGuideline = bottomGuideline;
@@ -81,7 +77,6 @@ public final class ActivityMainBinding implements ViewBinding {
     this.playersList = playersList;
     this.quit = quit;
     this.rightGuideline = rightGuideline;
-    this.sound = sound;
     this.startButton = startButton;
     this.topGuideline = topGuideline;
     this.trophy = trophy;
@@ -164,12 +159,6 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.sound;
-      AppCompatImageView sound = ViewBindings.findChildViewById(rootView, id);
-      if (sound == null) {
-        break missingId;
-      }
-
       id = R.id.start_button;
       AppCompatButton startButton = ViewBindings.findChildViewById(rootView, id);
       if (startButton == null) {
@@ -190,7 +179,7 @@ public final class ActivityMainBinding implements ViewBinding {
 
       return new ActivityMainBinding((ConstraintLayout) rootView, addButton, bottomGuideline,
           fragmentContainerLeaderboard, home, leaderboard, leftGuideline, playersList, quit,
-          rightGuideline, sound, startButton, topGuideline, trophy);
+          rightGuideline, startButton, topGuideline, trophy);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -47,14 +47,7 @@
         app:layout_constraintTop_toTopOf="@+id/topGuideline" />
 
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/sound"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/main_sound"
-        app:layout_constraintStart_toEndOf="@+id/leftGuideline"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topGuideline" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/topGuideline"

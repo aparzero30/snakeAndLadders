@@ -1,5 +1,8 @@
 package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
@@ -7,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageView
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.AddPlayerBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -40,6 +44,10 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.commit()
         }
 
+        addButton.setOnClickListener {
+            showAddProductDialogue().show()
+        }
+
         startButton.setOnClickListener {
 
 
@@ -54,6 +62,25 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.replace(R.id.home, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
+        }
+    }
+
+    fun showAddProductDialogue(): Dialog {
+        return this!!.let{
+            val builder = AlertDialog.Builder(it)
+            var dialogueAddProductBinding : AddPlayerBinding =
+                AddPlayerBinding.inflate(it.layoutInflater)
+            with(builder){
+                setPositiveButton("ADD", DialogInterface.OnClickListener{
+                        dialog, id ->
+
+                })
+                setNegativeButton("CANCEL", DialogInterface.OnClickListener{ dialog, id ->
+
+                })
+                setView(dialogueAddProductBinding.root)
+                create()
+            }
         }
     }
 

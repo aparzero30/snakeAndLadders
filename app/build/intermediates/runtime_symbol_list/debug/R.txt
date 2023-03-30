@@ -3178,13 +3178,13 @@ int id player2 0x7f080165
 int id player3 0x7f080166
 int id player4 0x7f080167
 int id player5 0x7f080168
+int id player_image 0x7f08021a
 int id player_input 0x7f080169
 int id player_name 0x7f08016a
+int id players_list 0x7f080219
 int id position 0x7f08016b
 int id postLayout 0x7f08016c
 int id pressed 0x7f08016d
-int id product_image 0x7f08016e
-int id product_name 0x7f08016f
 int id progress_circular 0x7f080170
 int id progress_horizontal 0x7f080171
 int id quit 0x7f080172

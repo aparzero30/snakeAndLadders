@@ -50,10 +50,10 @@ id player2
 id player3
 id player4
 id player5
+id player_image
 id player_input
 id player_name
-id product_image
-id product_name
+id players_list
 id quit
 id rightGuideline
 id roll_button

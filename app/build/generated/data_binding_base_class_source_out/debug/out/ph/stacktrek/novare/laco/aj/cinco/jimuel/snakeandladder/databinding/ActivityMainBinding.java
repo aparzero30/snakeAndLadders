@@ -12,6 +12,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
@@ -42,6 +43,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Guideline leftGuideline;
 
   @NonNull
+  public final RecyclerView playersList;
+
+  @NonNull
   public final AppCompatImageView quit;
 
   @NonNull
@@ -63,9 +67,10 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull AppCompatButton addButton, @NonNull Guideline bottomGuideline,
       @NonNull ConstraintLayout fragmentContainerLeaderboard, @NonNull FrameLayout home,
       @NonNull TextView leaderboard, @NonNull Guideline leftGuideline,
-      @NonNull AppCompatImageView quit, @NonNull Guideline rightGuideline,
-      @NonNull AppCompatImageView sound, @NonNull AppCompatButton startButton,
-      @NonNull Guideline topGuideline, @NonNull AppCompatImageView trophy) {
+      @NonNull RecyclerView playersList, @NonNull AppCompatImageView quit,
+      @NonNull Guideline rightGuideline, @NonNull AppCompatImageView sound,
+      @NonNull AppCompatButton startButton, @NonNull Guideline topGuideline,
+      @NonNull AppCompatImageView trophy) {
     this.rootView = rootView;
     this.addButton = addButton;
     this.bottomGuideline = bottomGuideline;
@@ -73,6 +78,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.home = home;
     this.leaderboard = leaderboard;
     this.leftGuideline = leftGuideline;
+    this.playersList = playersList;
     this.quit = quit;
     this.rightGuideline = rightGuideline;
     this.sound = sound;
@@ -140,6 +146,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.players_list;
+      RecyclerView playersList = ViewBindings.findChildViewById(rootView, id);
+      if (playersList == null) {
+        break missingId;
+      }
+
       id = R.id.quit;
       AppCompatImageView quit = ViewBindings.findChildViewById(rootView, id);
       if (quit == null) {
@@ -177,8 +189,8 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, addButton, bottomGuideline,
-          fragmentContainerLeaderboard, home, leaderboard, leftGuideline, quit, rightGuideline,
-          sound, startButton, topGuideline, trophy);
+          fragmentContainerLeaderboard, home, leaderboard, leftGuideline, playersList, quit,
+          rightGuideline, sound, startButton, topGuideline, trophy);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

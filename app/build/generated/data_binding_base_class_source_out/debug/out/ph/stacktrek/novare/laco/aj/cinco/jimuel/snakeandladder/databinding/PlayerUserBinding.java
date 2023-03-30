@@ -5,9 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -21,16 +21,16 @@ public final class PlayerUserBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final ImageView productImage;
+  public final ImageView playerImage;
 
   @NonNull
-  public final AppCompatTextView productName;
+  public final TextView playerName;
 
-  private PlayerUserBinding(@NonNull CardView rootView, @NonNull ImageView productImage,
-      @NonNull AppCompatTextView productName) {
+  private PlayerUserBinding(@NonNull CardView rootView, @NonNull ImageView playerImage,
+      @NonNull TextView playerName) {
     this.rootView = rootView;
-    this.productImage = productImage;
-    this.productName = productName;
+    this.playerImage = playerImage;
+    this.playerName = playerName;
   }
 
   @Override
@@ -60,19 +60,19 @@ public final class PlayerUserBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.product_image;
-      ImageView productImage = ViewBindings.findChildViewById(rootView, id);
-      if (productImage == null) {
+      id = R.id.player_image;
+      ImageView playerImage = ViewBindings.findChildViewById(rootView, id);
+      if (playerImage == null) {
         break missingId;
       }
 
-      id = R.id.product_name;
-      AppCompatTextView productName = ViewBindings.findChildViewById(rootView, id);
-      if (productName == null) {
+      id = R.id.player_name;
+      TextView playerName = ViewBindings.findChildViewById(rootView, id);
+      if (playerName == null) {
         break missingId;
       }
 
-      return new PlayerUserBinding((CardView) rootView, productImage, productName);
+      return new PlayerUserBinding((CardView) rootView, playerImage, playerName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

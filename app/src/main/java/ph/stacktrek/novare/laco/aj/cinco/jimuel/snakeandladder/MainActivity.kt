@@ -3,6 +3,8 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.DialogInterface
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
@@ -11,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAdapter
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
@@ -18,6 +21,8 @@ import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.AddPl
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayerDAO
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayertDAOStubImplementation
+import java.io.File
+import java.io.FileOutputStream
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,9 +32,21 @@ class MainActivity : AppCompatActivity() {
     private lateinit var playerDAO: PlayerDAO
     private lateinit var itemTouchHelper: ItemTouchHelper
 
+
+
+
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
 
         val frameLayout = findViewById<FrameLayout>(R.id.home) // get a reference to the FrameLayout
         val textView = TextView(this) // create a new TextView object
@@ -57,8 +74,11 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.commit()
         }
 
+
+
+
         addButton.setOnClickListener {
-            showAddProductDialogue().show()
+            showAddPlayerDialogue().show()
         }
 
         startButton.setOnClickListener {
@@ -76,75 +96,71 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
+
+        loadPlayers()
+
+
     }
 
-    fun showAddProductDialogue(): Dialog {
-        return this!!.let{
-            val builder = AlertDialog.Builder(it)
-            var dialogueAddProductBinding : AddPlayerBinding =
-                AddPlayerBinding.inflate(it.layoutInflater)
-            with(builder){
-                setPositiveButton("ADD", DialogInterface.OnClickListener{
-                        dialog, id ->
 
-                })
-                setNegativeButton("CANCEL", DialogInterface.OnClickListener{ dialog, id ->
 
-                })
-                setView(dialogueAddProductBinding.root)
-                create()
-            }
+    fun loadPlayers(){
+        playerDAO = PlayertDAOStubImplementation()
+        playerAdapter = PlayerAdapter(applicationContext, playerDAO.getPlayers() as ArrayList<Player>)
+        with(binding.playersList){
+            layoutManager = GridLayoutManager(applicationContext, 1)
+            adapter = playerAdapter
+
+
         }
     }
 
-
-
-
-    fun showAddPlayer(): Dialog {
+    fun showAddPlayerDialogue(): Dialog {
         return this!!.let {
             val builder = AlertDialog.Builder(it)
             var dialogueAddPlayerBinding: AddPlayerBinding =
                 AddPlayerBinding.inflate(it.layoutInflater)
             with(builder) {
+
+               var imagePath = ""
+
+                dialogueAddPlayerBinding.avatar1.setOnClickListener {
+                    val image = BitmapFactory.decodeResource(
+                        applicationContext.resources,
+                        R.drawable.avatar1
+                    )
+                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val fileOutputStream = FileOutputStream(file)
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+                    fileOutputStream.flush()
+                    fileOutputStream.close()
+                    imagePath = file.absolutePath
+
+                }
+
                 setPositiveButton("ADD", DialogInterface.OnClickListener { dialog, id ->
                     val name = dialogueAddPlayerBinding.playerName.text.toString().trim()
                     if (name.isNotEmpty()) {
-                        val player = Player(name)
-                        val productDAO = PlayertDAOStubImplementation()
-                        productDAO.addPlayer(player)
-                        playerAdapter.addPlayer(player)
+                        val product = Player(name)
+                        product.imagePath = imagePath;
+                        val playerDAO = PlayertDAOStubImplementation()
+                        playerDAO.addPlayer(product)
+                        playerAdapter.addPlayer(product)
                     } else {
-                        Toast.makeText(context, "Product name cannot be empty", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Product name cannot be empty", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 })
                 setNegativeButton("CANCEL", DialogInterface.OnClickListener { dialog, id ->
 
                 })
                 setView(dialogueAddPlayerBinding.root)
-
                 create()
             }
         }
-    }
 
 
 
-
-
-
-
-
-
-
-
-
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val startButton = findViewById<AppCompatButton>(R.id.start_button)
-        val addButton = findViewById<AppCompatButton>(R.id.add_button)
-        startButton.visibility = View.VISIBLE
-        addButton.visibility = View.VISIBLE
     }
 
 }

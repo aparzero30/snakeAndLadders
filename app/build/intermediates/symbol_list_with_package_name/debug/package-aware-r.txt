@@ -3179,13 +3179,13 @@ id player2
 id player3
 id player4
 id player5
+id player_image
 id player_input
 id player_name
+id players_list
 id position
 id postLayout
 id pressed
-id product_image
-id product_name
 id progress_circular
 id progress_horizontal
 id quit

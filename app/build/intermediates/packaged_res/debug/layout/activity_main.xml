@@ -111,6 +111,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@color/start_color"
+        android:textColor="@color/white"
         android:text="START"
         app:layout_constraintBottom_toBottomOf="@+id/bottomGuideline"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline" />
@@ -120,6 +121,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@color/add_color"
+        android:textColor="@color/white"
         android:text="ADD"
         app:layout_constraintBottom_toTopOf="@+id/start_button"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"

@@ -28,13 +28,7 @@
         android:theme="@style/Theme.SnakeAndLadder" >
         <activity
             android:name="ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.LeaderActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name="ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.MainActivity"
             android:exported="true"

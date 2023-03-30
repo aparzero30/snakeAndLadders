@@ -52,6 +52,8 @@ id player4
 id player5
 id player_input
 id player_name
+id product_image
+id product_name
 id quit
 id rightGuideline
 id roll_button
@@ -69,6 +71,7 @@ layout activity_main
 layout add_player
 layout fragment_board
 layout fragment_leaderboard_fragment
+layout player_user
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name

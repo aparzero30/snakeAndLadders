@@ -7,13 +7,26 @@ import android.os.Bundle
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.recyclerview.widget.ItemTouchHelper
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAdapter
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.AddPlayerBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayerDAO
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayertDAOStubImplementation
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var playerAdapter: PlayerAdapter
+    private lateinit var playerDAO: PlayerDAO
+    private lateinit var itemTouchHelper: ItemTouchHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -83,6 +96,47 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
+
+    fun showAddPlayer(): Dialog {
+        return this!!.let {
+            val builder = AlertDialog.Builder(it)
+            var dialogueAddPlayerBinding: AddPlayerBinding =
+                AddPlayerBinding.inflate(it.layoutInflater)
+            with(builder) {
+                setPositiveButton("ADD", DialogInterface.OnClickListener { dialog, id ->
+                    val name = dialogueAddPlayerBinding.playerName.text.toString().trim()
+                    if (name.isNotEmpty()) {
+                        val player = Player(name)
+                        val productDAO = PlayertDAOStubImplementation()
+                        productDAO.addPlayer(player)
+                        playerAdapter.addPlayer(player)
+                    } else {
+                        Toast.makeText(context, "Product name cannot be empty", Toast.LENGTH_SHORT).show()
+                    }
+                })
+                setNegativeButton("CANCEL", DialogInterface.OnClickListener { dialog, id ->
+
+                })
+                setView(dialogueAddPlayerBinding.root)
+
+                create()
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
     override fun onBackPressed() {

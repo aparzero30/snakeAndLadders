@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.FragmentBoardBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,10 +55,15 @@ class BoardFragment : Fragment() {
 
         val players = arguments?.getParcelableArrayList<Player>("key");
 
-//        val player = Player("John")
-//        player.imagePath = "path/to/image"
-//        player.position = 5
-//        player.place = 2
+
+        var players1 = ArrayList<Player>()
+
+        if(players!=null){
+            players1 = players
+        }
+
+
+
 
        var playerCount = players?.size?.minus(1)
 
@@ -72,15 +78,25 @@ class BoardFragment : Fragment() {
             // Code to be executed when the button is clicked
 
 
-            if (players != null) {
-                player = players.get(currentPlayer)
-                updateTile(player, boardView, requireContext())
-                player.lastPosition = player.position
-                removeLastPosition(player.lastPosition, boardView, requireContext())
-                player.position = rollDice(player.position)
-                println("Current position of ${player.username} is ${player.position}")
-                updateTile(player, boardView, requireContext())
-            }
+
+            updateTile(players1.get(currentPlayer), boardView, requireContext())
+            players1.get(currentPlayer).lastPosition =  players1.get(currentPlayer).position
+            removeLastPosition( players1.get(currentPlayer).lastPosition , boardView, requireContext())
+            players1.get(currentPlayer).position = rollDice(players1.get(currentPlayer).position)
+
+            println("Current position of ${players1.get(currentPlayer).username} is ${players1.get(currentPlayer).position}")
+            updateTile(players1.get(currentPlayer), boardView, requireContext())
+
+
+//            if (players != null) {
+//                player = players.get(currentPlayer)
+//                updateTile(player, boardView, requireContext())
+//                player.lastPosition = player.position
+//                removeLastPosition(player.lastPosition, boardView, requireContext())
+//                player.position = rollDice(player.position)
+//                println("Current position of ${player.username} is ${player.position}")
+//                updateTile(player, boardView, requireContext())
+//            }
 
 
             if(playerCount == currentPlayer){
@@ -156,7 +172,7 @@ class BoardFragment : Fragment() {
     }
     private fun rollDice(position:Int):Int{
 
-        val rollNum  = Random().nextInt(6) + 1;
+        val rollNum  = Random().nextInt(6);
         println("wow you rolled ${rollNum}")
         return  position +  rollNum
     }
@@ -290,8 +306,8 @@ class BoardFragment : Fragment() {
                 ) {
 
                     textView.text = ""
-//                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
-//                    cellView.background = drawable
+                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
+                    cellView.background = drawable
                 }
 
 

@@ -2,24 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_container"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="700dp"
+    android:layout_width="match_parent"
     android:layout_height="355dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".leaderboard_fragment"
     >
-
-
-    <Button
-        android:id="@+id/my_button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/add_color"
-        android:text="My Button"
-        android:textColor="@color/black"
-        tools:ignore="MissingConstraints" />
-
 
 
 
@@ -35,4 +23,46 @@
         tools:ignore="MissingConstraints">
 
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/framecard1"
+        android:layout_width="150dp"
+        android:layout_height="230dp"
+        android:background="@color/player_color"
+        app:layout_constraintStart_toEndOf="@id/boardView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        >
+
+        <ImageView
+            android:id="@+id/playerturn"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/lobby1"
+            android:layout_gravity="top|center"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player1's turn"
+            android:layout_marginTop="52dp"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/my_button1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@color/start_color"
+            android:textColor="@color/white"
+            android:text="ROLL"
+            android:layout_gravity="bottom"
+            />
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

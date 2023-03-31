@@ -21,6 +21,7 @@ drawable avatar5
 drawable board_board
 drawable board_ladder
 drawable board_snake
+drawable dice
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable leader_back
@@ -44,6 +45,7 @@ id avatar5
 id back
 id boardView
 id bottomGuideline
+id dice
 id fragment_container
 id fragment_container_leaderboard
 id frame1
@@ -51,6 +53,7 @@ id frame2
 id frame3
 id frame4
 id frame5
+id framecard1
 id home
 id leaderboard
 id leftGuideline
@@ -59,8 +62,12 @@ id player_image
 id player_input
 id player_name
 id players_list
+id playerturn
 id quit
+id result_frame
+id result_text
 id rightGuideline
+id roll_result
 id start_button
 id tile1
 id tile_image
@@ -75,6 +82,7 @@ id trophy
 layout activity_leader
 layout activity_main
 layout add_player
+layout dice_result
 layout fragment_board
 layout fragment_leaderboard_fragment
 layout player_user

@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -37,9 +36,6 @@ public final class ActivityMainBinding implements ViewBinding {
   public final FrameLayout home;
 
   @NonNull
-  public final TextView leaderboard;
-
-  @NonNull
   public final Guideline leftGuideline;
 
   @NonNull
@@ -63,16 +59,15 @@ public final class ActivityMainBinding implements ViewBinding {
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppCompatButton addButton, @NonNull Guideline bottomGuideline,
       @NonNull ConstraintLayout fragmentContainerLeaderboard, @NonNull FrameLayout home,
-      @NonNull TextView leaderboard, @NonNull Guideline leftGuideline,
-      @NonNull RecyclerView playersList, @NonNull AppCompatImageView quit,
-      @NonNull Guideline rightGuideline, @NonNull AppCompatButton startButton,
-      @NonNull Guideline topGuideline, @NonNull AppCompatImageView trophy) {
+      @NonNull Guideline leftGuideline, @NonNull RecyclerView playersList,
+      @NonNull AppCompatImageView quit, @NonNull Guideline rightGuideline,
+      @NonNull AppCompatButton startButton, @NonNull Guideline topGuideline,
+      @NonNull AppCompatImageView trophy) {
     this.rootView = rootView;
     this.addButton = addButton;
     this.bottomGuideline = bottomGuideline;
     this.fragmentContainerLeaderboard = fragmentContainerLeaderboard;
     this.home = home;
-    this.leaderboard = leaderboard;
     this.leftGuideline = leftGuideline;
     this.playersList = playersList;
     this.quit = quit;
@@ -129,12 +124,6 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.leaderboard;
-      TextView leaderboard = ViewBindings.findChildViewById(rootView, id);
-      if (leaderboard == null) {
-        break missingId;
-      }
-
       id = R.id.leftGuideline;
       Guideline leftGuideline = ViewBindings.findChildViewById(rootView, id);
       if (leftGuideline == null) {
@@ -178,8 +167,8 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, addButton, bottomGuideline,
-          fragmentContainerLeaderboard, home, leaderboard, leftGuideline, playersList, quit,
-          rightGuideline, startButton, topGuideline, trophy);
+          fragmentContainerLeaderboard, home, leftGuideline, playersList, quit, rightGuideline,
+          startButton, topGuideline, trophy);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -2740,6 +2740,11 @@ int drawable ic_mtrl_chip_close_circle 0x7f070099
 int drawable ic_search_black_24 0x7f07009a
 int drawable leader_back 0x7f07009b
 int drawable leader_wizard 0x7f07009c
+int drawable lobby1 0x7f0700ea
+int drawable lobby2 0x7f0700eb
+int drawable lobby3 0x7f0700ec
+int drawable lobby4 0x7f0700ed
+int drawable lobby5 0x7f0700ee
 int drawable m3_appbar_background 0x7f07009d
 int drawable m3_avd_hide_password 0x7f07009e
 int drawable m3_avd_show_password 0x7f07009f
@@ -2919,7 +2924,7 @@ int id beginOnFirstDraw 0x7f080062
 int id beginning 0x7f080063
 int id bestChoice 0x7f080064
 int id blocking 0x7f080065
-int id board 0x7f080066
+int id boardView 0x7f080219
 int id bottom 0x7f080067
 int id bottomGuideline 0x7f080068
 int id bounce 0x7f080069
@@ -3135,6 +3140,7 @@ int id mtrl_picker_text_input_range_start 0x7f08013a
 int id mtrl_picker_title_text 0x7f08013b
 int id mtrl_view_tag_bottom_padding 0x7f08013c
 int id multiply 0x7f08013d
+int id my_button 0x7f08021a
 int id navigation_bar_item_active_indicator_view 0x7f08013e
 int id navigation_bar_item_icon_container 0x7f08013f
 int id navigation_bar_item_icon_view 0x7f080140
@@ -3173,18 +3179,13 @@ int id pathRelative 0x7f080160
 int id peekHeight 0x7f080161
 int id percent 0x7f080162
 int id pin 0x7f080163
-int id player1 0x7f080164
-int id player2 0x7f080165
-int id player3 0x7f080166
-int id player4 0x7f080167
-int id player5 0x7f080168
-int id player_image 0x7f08021a
-int id player_input 0x7f080169
-int id player_name 0x7f08016a
-int id players_list 0x7f080219
-int id position 0x7f08016b
-int id postLayout 0x7f08016c
-int id pressed 0x7f08016d
+int id player_image 0x7f080169
+int id player_input 0x7f08016a
+int id player_name 0x7f08016b
+int id players_list 0x7f08016c
+int id position 0x7f08016d
+int id postLayout 0x7f08016e
+int id pressed 0x7f08016f
 int id progress_circular 0x7f080170
 int id progress_horizontal 0x7f080171
 int id quit 0x7f080172
@@ -3197,7 +3198,6 @@ int id rightGuideline 0x7f080178
 int id rightToLeft 0x7f080179
 int id right_icon 0x7f08017a
 int id right_side 0x7f08017b
-int id roll_button 0x7f08017c
 int id rounded 0x7f08017d
 int id row_index_key 0x7f08017e
 int id save_non_transition_alpha 0x7f08017f
@@ -3251,7 +3251,6 @@ int id snackbar_action 0x7f0801ae
 int id snackbar_text 0x7f0801af
 int id snap 0x7f0801b0
 int id snapMargins 0x7f0801b1
-int id sound 0x7f0801b2
 int id south 0x7f0801b3
 int id spacer 0x7f0801b4
 int id special_effects_controller_view_tag 0x7f0801b5
@@ -3308,6 +3307,7 @@ int id textinput_helper_text 0x7f0801e7
 int id textinput_placeholder 0x7f0801e8
 int id textinput_prefix_text 0x7f0801e9
 int id textinput_suffix_text 0x7f0801ea
+int id tile1 0x7f08021b
 int id time 0x7f0801eb
 int id title 0x7f0801ec
 int id titleDividerNoCustom 0x7f0801ed
@@ -3543,6 +3543,7 @@ int layout select_dialog_item_material 0x7f0b006b
 int layout select_dialog_multichoice_material 0x7f0b006c
 int layout select_dialog_singlechoice_material 0x7f0b006d
 int layout support_simple_spinner_dropdown_item 0x7f0b006e
+int layout tile 0x7f0b006f
 int mipmap ic_launcher 0x7f0d0000
 int mipmap ic_launcher_round 0x7f0d0001
 int plurals mtrl_badge_content_description 0x7f0e0000

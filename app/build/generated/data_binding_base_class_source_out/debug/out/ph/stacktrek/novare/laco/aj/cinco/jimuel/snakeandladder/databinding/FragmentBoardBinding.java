@@ -4,12 +4,10 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -23,64 +21,20 @@ public final class FragmentBoardBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final AppCompatImageView board;
+  public final LinearLayout boardView;
 
   @NonNull
   public final ConstraintLayout fragmentContainer;
 
   @NonNull
-  public final FrameLayout frame1;
+  public final Button myButton;
 
-  @NonNull
-  public final FrameLayout frame2;
-
-  @NonNull
-  public final FrameLayout frame3;
-
-  @NonNull
-  public final FrameLayout frame4;
-
-  @NonNull
-  public final FrameLayout frame5;
-
-  @NonNull
-  public final ImageView player1;
-
-  @NonNull
-  public final ImageView player2;
-
-  @NonNull
-  public final ImageView player3;
-
-  @NonNull
-  public final ImageView player4;
-
-  @NonNull
-  public final ImageView player5;
-
-  @NonNull
-  public final AppCompatButton rollButton;
-
-  private FragmentBoardBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppCompatImageView board, @NonNull ConstraintLayout fragmentContainer,
-      @NonNull FrameLayout frame1, @NonNull FrameLayout frame2, @NonNull FrameLayout frame3,
-      @NonNull FrameLayout frame4, @NonNull FrameLayout frame5, @NonNull ImageView player1,
-      @NonNull ImageView player2, @NonNull ImageView player3, @NonNull ImageView player4,
-      @NonNull ImageView player5, @NonNull AppCompatButton rollButton) {
+  private FragmentBoardBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout boardView,
+      @NonNull ConstraintLayout fragmentContainer, @NonNull Button myButton) {
     this.rootView = rootView;
-    this.board = board;
+    this.boardView = boardView;
     this.fragmentContainer = fragmentContainer;
-    this.frame1 = frame1;
-    this.frame2 = frame2;
-    this.frame3 = frame3;
-    this.frame4 = frame4;
-    this.frame5 = frame5;
-    this.player1 = player1;
-    this.player2 = player2;
-    this.player3 = player3;
-    this.player4 = player4;
-    this.player5 = player5;
-    this.rollButton = rollButton;
+    this.myButton = myButton;
   }
 
   @Override
@@ -110,82 +64,22 @@ public final class FragmentBoardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.board;
-      AppCompatImageView board = ViewBindings.findChildViewById(rootView, id);
-      if (board == null) {
+      id = R.id.boardView;
+      LinearLayout boardView = ViewBindings.findChildViewById(rootView, id);
+      if (boardView == null) {
         break missingId;
       }
 
       ConstraintLayout fragmentContainer = (ConstraintLayout) rootView;
 
-      id = R.id.frame1;
-      FrameLayout frame1 = ViewBindings.findChildViewById(rootView, id);
-      if (frame1 == null) {
+      id = R.id.my_button;
+      Button myButton = ViewBindings.findChildViewById(rootView, id);
+      if (myButton == null) {
         break missingId;
       }
 
-      id = R.id.frame2;
-      FrameLayout frame2 = ViewBindings.findChildViewById(rootView, id);
-      if (frame2 == null) {
-        break missingId;
-      }
-
-      id = R.id.frame3;
-      FrameLayout frame3 = ViewBindings.findChildViewById(rootView, id);
-      if (frame3 == null) {
-        break missingId;
-      }
-
-      id = R.id.frame4;
-      FrameLayout frame4 = ViewBindings.findChildViewById(rootView, id);
-      if (frame4 == null) {
-        break missingId;
-      }
-
-      id = R.id.frame5;
-      FrameLayout frame5 = ViewBindings.findChildViewById(rootView, id);
-      if (frame5 == null) {
-        break missingId;
-      }
-
-      id = R.id.player1;
-      ImageView player1 = ViewBindings.findChildViewById(rootView, id);
-      if (player1 == null) {
-        break missingId;
-      }
-
-      id = R.id.player2;
-      ImageView player2 = ViewBindings.findChildViewById(rootView, id);
-      if (player2 == null) {
-        break missingId;
-      }
-
-      id = R.id.player3;
-      ImageView player3 = ViewBindings.findChildViewById(rootView, id);
-      if (player3 == null) {
-        break missingId;
-      }
-
-      id = R.id.player4;
-      ImageView player4 = ViewBindings.findChildViewById(rootView, id);
-      if (player4 == null) {
-        break missingId;
-      }
-
-      id = R.id.player5;
-      ImageView player5 = ViewBindings.findChildViewById(rootView, id);
-      if (player5 == null) {
-        break missingId;
-      }
-
-      id = R.id.roll_button;
-      AppCompatButton rollButton = ViewBindings.findChildViewById(rootView, id);
-      if (rollButton == null) {
-        break missingId;
-      }
-
-      return new FragmentBoardBinding((ConstraintLayout) rootView, board, fragmentContainer, frame1,
-          frame2, frame3, frame4, frame5, player1, player2, player3, player4, player5, rollButton);
+      return new FragmentBoardBinding((ConstraintLayout) rootView, boardView, fragmentContainer,
+          myButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

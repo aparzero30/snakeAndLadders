@@ -4,12 +4,16 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.R;
 
 public final class TileBinding implements ViewBinding {
@@ -19,9 +23,18 @@ public final class TileBinding implements ViewBinding {
   @NonNull
   public final ConstraintLayout tile1;
 
-  private TileBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout tile1) {
+  @NonNull
+  public final ImageView tileImage;
+
+  @NonNull
+  public final TextView tileText;
+
+  private TileBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout tile1,
+      @NonNull ImageView tileImage, @NonNull TextView tileText) {
     this.rootView = rootView;
     this.tile1 = tile1;
+    this.tileImage = tileImage;
+    this.tileText = tileText;
   }
 
   @Override
@@ -47,12 +60,27 @@ public final class TileBinding implements ViewBinding {
 
   @NonNull
   public static TileBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      ConstraintLayout tile1 = (ConstraintLayout) rootView;
+
+      id = R.id.tile_image;
+      ImageView tileImage = ViewBindings.findChildViewById(rootView, id);
+      if (tileImage == null) {
+        break missingId;
+      }
+
+      id = R.id.tile_text;
+      TextView tileText = ViewBindings.findChildViewById(rootView, id);
+      if (tileText == null) {
+        break missingId;
+      }
+
+      return new TileBinding((ConstraintLayout) rootView, tile1, tileImage, tileText);
     }
-
-    ConstraintLayout tile1 = (ConstraintLayout) rootView;
-
-    return new TileBinding((ConstraintLayout) rootView, tile1);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

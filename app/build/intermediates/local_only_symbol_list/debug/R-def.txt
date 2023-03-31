@@ -10,6 +10,8 @@ color purple_700
 color start_color
 color teal_200
 color teal_700
+color tile1
+color tile2
 color white
 drawable avatar1
 drawable avatar2
@@ -17,6 +19,8 @@ drawable avatar3
 drawable avatar4
 drawable avatar5
 drawable board_board
+drawable board_ladder
+drawable board_snake
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable leader_back
@@ -50,7 +54,7 @@ id frame5
 id home
 id leaderboard
 id leftGuideline
-id my_button
+id my_button1
 id player_image
 id player_input
 id player_name
@@ -59,6 +63,8 @@ id quit
 id rightGuideline
 id start_button
 id tile1
+id tile_image
+id tile_text
 id top1
 id top2
 id top3

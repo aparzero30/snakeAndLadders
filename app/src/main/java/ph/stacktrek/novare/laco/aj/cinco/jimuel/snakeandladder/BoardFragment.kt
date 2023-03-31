@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.FragmentBoardBinding
@@ -49,13 +50,15 @@ class BoardFragment : Fragment() {
 
         var position = 95
 
-        binding.myButton.setOnClickListener {
+
+
+        binding.myButton1.setOnClickListener {
             // Code to be executed when the button is clicked
 
             println("current position : ${position}")
 
             updateTile(position, boardView, requireContext())
-            position = position+1;
+
         }
 
 
@@ -103,19 +106,122 @@ class BoardFragment : Fragment() {
 
 
 
+//    private fun createBoard(boardView: LinearLayout) {
+//        val boardSize = 10
+//        val color1 = ContextCompat.getColor(requireContext(), R.color.black)
+//        val color2 = ContextCompat.getColor(requireContext(), R.color.white)
+//
+//        for (i in 0 until boardSize) {
+//            val rowView = LinearLayout(context)
+//            rowView.orientation = LinearLayout.HORIZONTAL
+//
+//            for (j in 0 until boardSize) {
+//                val cellView = LayoutInflater.from(context).inflate(
+//                    R.layout.tile, rowView, false
+//                )
+//
+//                // Set background color based on row and column
+//                if (i % 2 == 0 && j % 2 == 0 || i % 2 != 0 && j % 2 != 0) {
+//                    cellView.setBackgroundColor(color1)
+//                } else {
+//                    cellView.setBackgroundColor(color2)
+//                }
+//
+//                // Set image for specific tiles
+//                if (i == 0 && j == 1 || i == 0 && j == 8 || i == 2 && j == 0 || i == 2 && j == 9 ||
+//                    i == 2 && j == 4 || i == 3 && j == 6 || i == 5 && j == 1 ||
+//                    i == 5 && j == 9 || i == 7 && j == 0 || i == 7 && j == 7 ||
+//                    i == 7 && j == 9 || i == 8 && j == 6 || i == 9 && j == 0 || i == 9 && j == 3 || i == 9 && j == 7
+//                ) {
+//
+//                    println("value of index ${i}")
+////                    val imageView = cellView.findViewById<ImageView>(R.id.tile_image)
+////                    imageView.setImageResource(R.drawable.board_ladder)
+//                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
+//                    cellView.background = drawable
+//                }
+//
+//                rowView.addView(cellView)
+//            }
+//
+//            boardView.addView(rowView)
+//        }
+//    }
+
+//
+
     private fun createBoard(boardView: LinearLayout) {
         val boardSize = 10
-        val color1 = ContextCompat.getColor(requireContext(), R.color.add_color)
-        val color2 = ContextCompat.getColor(requireContext(), R.color.start_color)
+        val color1 = ContextCompat.getColor(requireContext(), R.color.tile2)
+        val color2 = ContextCompat.getColor(requireContext(), R.color.tile1)
+//        val color2 = ContextCompat.getColor(requireContext(), R.color.black)
+
+
+        var count = 100
+        var leftToRight = true;
+
+
 
         for (i in 0 until boardSize) {
             val rowView = LinearLayout(context)
             rowView.orientation = LinearLayout.HORIZONTAL
 
+
+            if(i%2==1){
+
+                if(count == 90 && i == 1){
+                    count = 81;
+                }
+                if(count ==70 && i == 3){
+                    count = 61;
+                }
+                if(count ==50 && i == 5){
+                    count = 41;
+                }
+                if(count ==30 && i == 7){
+                    count = 21;
+                }
+                if(count ==10 && i == 9){
+                    count = 1;
+                }
+
+                leftToRight  = false;
+            }
+            else{
+                leftToRight  = true;
+
+                if(count == 91 && i == 2){
+                    count = 80;
+                }
+                if(count ==71 && i == 4){
+                    count = 60;
+                }
+                if(count ==51 && i == 6){
+                    count = 40;
+                }
+                if(count ==31 && i == 8){
+                    count = 20;
+                }
+
+
+            }
+
+
+
+
             for (j in 0 until boardSize) {
                 val cellView = LayoutInflater.from(context).inflate(
                     R.layout.tile, rowView, false
                 )
+
+
+
+
+                val textView = cellView.findViewById<TextView>(R.id.tile_text)
+                textView.text = count.toString()
+
+
+
 
                 // Set background color based on row and column
                 if (i % 2 == 0 && j % 2 == 0 || i % 2 != 0 && j % 2 != 0) {
@@ -124,12 +230,49 @@ class BoardFragment : Fragment() {
                     cellView.setBackgroundColor(color2)
                 }
 
+                // Set image for specific tiles ladder
+                if (i == 0 && j == 1 || i == 0 && j == 8 || i == 2 && j == 0 || i == 2 && j == 9 ||
+                    i == 2 && j == 4 || i == 3 && j == 6 || i == 5 && j == 1 ||
+                    i == 5 && j == 9 || i == 7 && j == 0 || i == 7 && j == 7 ||
+                    i == 7 && j == 9 || i == 8 && j == 6 || i == 9 && j == 0 || i == 9 && j == 3 || i == 9 && j == 7
+                ) {
+
+                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
+                    cellView.background = drawable
+                    textView.text = ""
+
+                }
+
+
+
+                // Set image for specific tiles snkae
+                if (i == 0 && j == 3 || i == 2 && j == 2 || i == 0 && j == 5 || i == 4 && j == 4
+                    || i == 1 && j == 7 || i == 7 && j == 3 || i == 3 && j == 1 || i == 8 && j == 2
+                    || i == 5 && j == 7 || i == 7 && j == 5 || i == 6 && j == 4 || i == 9 && j == 5
+                    || i == 6 && j == 8 || i == 9 && j == 9
+                ) {
+
+                    textView.text = ""
+//                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
+//                    cellView.background = drawable
+                }
+
+
+
+                if(leftToRight){
+                    count = count - 1;
+                }
+                else{
+                    count = count +1;
+                }
+
                 rowView.addView(cellView)
             }
 
             boardView.addView(rowView)
         }
     }
+
 
 
 }

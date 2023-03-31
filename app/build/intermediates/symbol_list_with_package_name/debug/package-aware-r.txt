@@ -1916,6 +1916,8 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color teal_200
 color teal_700
+color tile1
+color tile2
 color tooltip_background_dark
 color tooltip_background_light
 color white
@@ -2712,6 +2714,8 @@ drawable avatar5
 drawable avd_hide_password
 drawable avd_show_password
 drawable board_board
+drawable board_ladder
+drawable board_snake
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3141,7 +3145,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id my_button
+id my_button1
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3309,6 +3313,8 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id tile1
+id tile_image
+id tile_text
 id time
 id title
 id titleDividerNoCustom

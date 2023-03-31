@@ -27,14 +27,14 @@ public final class FragmentBoardBinding implements ViewBinding {
   public final ConstraintLayout fragmentContainer;
 
   @NonNull
-  public final Button myButton;
+  public final Button myButton1;
 
   private FragmentBoardBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout boardView,
-      @NonNull ConstraintLayout fragmentContainer, @NonNull Button myButton) {
+      @NonNull ConstraintLayout fragmentContainer, @NonNull Button myButton1) {
     this.rootView = rootView;
     this.boardView = boardView;
     this.fragmentContainer = fragmentContainer;
-    this.myButton = myButton;
+    this.myButton1 = myButton1;
   }
 
   @Override
@@ -72,14 +72,14 @@ public final class FragmentBoardBinding implements ViewBinding {
 
       ConstraintLayout fragmentContainer = (ConstraintLayout) rootView;
 
-      id = R.id.my_button;
-      Button myButton = ViewBindings.findChildViewById(rootView, id);
-      if (myButton == null) {
+      id = R.id.my_button1;
+      Button myButton1 = ViewBindings.findChildViewById(rootView, id);
+      if (myButton1 == null) {
         break missingId;
       }
 
       return new FragmentBoardBinding((ConstraintLayout) rootView, boardView, fragmentContainer,
-          myButton);
+          myButton1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

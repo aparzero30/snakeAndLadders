@@ -13,7 +13,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -50,6 +50,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        println("heelo");
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -62,7 +65,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.trophy.setOnClickListener {
 
-            page = 1
+            if(page==1){
+                page =2
+            }else{
+                page =1;
+                println("dumaan sakne ${page}")
+            }
+
 
             binding.addButton.visibility = View.INVISIBLE
             binding.startButton.visibility = View.INVISIBLE
@@ -86,7 +95,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.startButton.setOnClickListener {
 
-            page = 2
+
+            page = 1
+
+
+
+
+
 
             parentView = binding.playersList.parent as ViewGroup
             parentView.removeView(binding.playersList)
@@ -130,7 +145,7 @@ class MainActivity : AppCompatActivity() {
                 AddPlayerBinding.inflate(it.layoutInflater)
             with(builder) {
 
-               var imagePath = ""
+                var imagePath = ""
 
                 dialogueAddPlayerBinding.avatar1.setOnClickListener {
                     val image = BitmapFactory.decodeResource(
@@ -225,22 +240,46 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onBackPressed() {
 
+
+        println("the page is ${page}")
+
+        if(page == 1){
             binding.addButton.visibility = View.VISIBLE
             binding.startButton.visibility = View.VISIBLE
+            page = 0;
+        }
+        else{
+            page = page -1;
+        }
+
+
+
 
         recyclerView = binding.playersList
 
         if (recyclerView.parent == null) {
             binding.home.addView(recyclerView)
 
-        } else {
-            // Handle the default back press behavior
-            super.onBackPressed()
         }
 
+
+
+
+
         val fragmentManager = supportFragmentManager
-        if (fragmentManager.backStackEntryCount > 0) {
-            fragmentManager.popBackStack()
+        val backStackEntryCount = fragmentManager.backStackEntryCount
+
+
+
+
+
+
+        if (backStackEntryCount > 0) {
+            // Remove the latest fragment from the back stack
+            fragmentManager.popBackStack(
+                fragmentManager.getBackStackEntryAt(backStackEntryCount - 1).id,
+                FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
         } else {
             super.onBackPressed()
         }

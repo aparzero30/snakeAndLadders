@@ -2,6 +2,7 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.FragmentBoardBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +30,7 @@ class BoardFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding: FragmentBoardBinding
+    private lateinit var currentPlayer: Player
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -44,6 +47,8 @@ class BoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        val players = arguments?.getParcelableArrayList<Player>("key")
+
         binding = FragmentBoardBinding.inflate(inflater, container, false)
         val boardView = binding.boardView
         createBoard(boardView)
@@ -51,15 +56,24 @@ class BoardFragment : Fragment() {
         var position = 95
 
 
-
         binding.myButton1.setOnClickListener {
             // Code to be executed when the button is clicked
 
             println("current position : ${position}")
 
+            println("player count this is from fragment : ${players?.size}")
+
             updateTile(position, boardView, requireContext())
 
+            if (players != null) {
+                for (player in players) {
+                    // do something with the player object, e.g. print the name
+                    player.username?.let { it1 -> Log.d("Player Name", it1) }
+                    player.imagePath?.let { it1 -> Log.d("Player Icon", it1) }
+                }
+            }
         }
+
 
 
         return binding.root

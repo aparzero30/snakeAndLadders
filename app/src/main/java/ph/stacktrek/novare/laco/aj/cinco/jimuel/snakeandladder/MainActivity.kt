@@ -40,6 +40,8 @@ class MainActivity : AppCompatActivity() {
 
     private var page = 0
 
+    private var playerCount = 5
+
 
 
 
@@ -49,8 +51,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        println("heelo");
 
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -90,7 +90,12 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.addButton.setOnClickListener {
-            showAddPlayerDialogue().show()
+            if(playerCount > 0) {
+                showAddPlayerDialogue().show()
+            } else {
+                Toast.makeText(applicationContext, "Max player reached!", Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
 
         binding.startButton.setOnClickListener {
@@ -115,6 +120,11 @@ class MainActivity : AppCompatActivity() {
 
             // Replace FragmentName with the name of your fragment class
             val fragment = BoardFragment()
+
+            val bundle = Bundle()
+            bundle.putParcelableArrayList("key", playerDAO.getPlayers())
+            fragment.arguments = bundle
+
             fragmentTransaction.replace(R.id.home, fragment)
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
@@ -145,14 +155,15 @@ class MainActivity : AppCompatActivity() {
                 AddPlayerBinding.inflate(it.layoutInflater)
             with(builder) {
 
-                var imagePath = ""
+                var imagePath = "a"
+
 
                 dialogueAddPlayerBinding.avatar1.setOnClickListener {
                     val image = BitmapFactory.decodeResource(
                         applicationContext.resources,
                         R.drawable.lobby1
                     )
-                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val file = File(applicationContext.filesDir, "avatar1.jpg")
                     val fileOutputStream = FileOutputStream(file)
                     image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
                     fileOutputStream.flush()
@@ -166,7 +177,7 @@ class MainActivity : AppCompatActivity() {
                         applicationContext.resources,
                         R.drawable.lobby2
                     )
-                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val file = File(applicationContext.filesDir, "avatar2.jpg")
                     val fileOutputStream = FileOutputStream(file)
                     image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
                     fileOutputStream.flush()
@@ -180,7 +191,7 @@ class MainActivity : AppCompatActivity() {
                         applicationContext.resources,
                         R.drawable.lobby3
                     )
-                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val file = File(applicationContext.filesDir, "avatar3.jpg")
                     val fileOutputStream = FileOutputStream(file)
                     image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
                     fileOutputStream.flush()
@@ -194,7 +205,7 @@ class MainActivity : AppCompatActivity() {
                         applicationContext.resources,
                         R.drawable.lobby4
                     )
-                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val file = File(applicationContext.filesDir, "avatar4.jpg")
                     val fileOutputStream = FileOutputStream(file)
                     image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
                     fileOutputStream.flush()
@@ -208,7 +219,7 @@ class MainActivity : AppCompatActivity() {
                         applicationContext.resources,
                         R.drawable.lobby5
                     )
-                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val file = File(applicationContext.filesDir, "avatar5.jpg")
                     val fileOutputStream = FileOutputStream(file)
                     image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
                     fileOutputStream.flush()
@@ -220,13 +231,20 @@ class MainActivity : AppCompatActivity() {
                 setPositiveButton("ADD", DialogInterface.OnClickListener { dialog, id ->
                     val name = dialogueAddPlayerBinding.playerName.text.toString().trim()
                     if (name.isNotEmpty()) {
-                        val product = Player(name)
-                        product.imagePath = imagePath;
-                        val playerDAO = PlayertDAOStubImplementation()
-                        playerDAO.addPlayer(product)
-                        playerAdapter.addPlayer(product)
+
+                        if(!imagePath.equals("a")) {
+                            val player = Player(name)
+                            player.imagePath = imagePath;
+                            val playerDAO = PlayertDAOStubImplementation()
+                            playerDAO.addPlayer(player)
+                            playerAdapter.addPlayer(player)
+                            playerCount -= 1
+                        } else {
+                            Toast.makeText(context, "Player icon cannot be empty", Toast.LENGTH_SHORT)
+                                .show()
+                        }
                     } else {
-                        Toast.makeText(context, "Product name cannot be empty", Toast.LENGTH_SHORT)
+                        Toast.makeText(context, "Player name and icon cannot be empty", Toast.LENGTH_SHORT)
                             .show()
                     }
                 })

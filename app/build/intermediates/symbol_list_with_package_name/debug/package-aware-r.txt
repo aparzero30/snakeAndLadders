@@ -2729,6 +2729,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dice
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
@@ -2989,6 +2990,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id dice
 id dimensions
 id direct
 id disableHome
@@ -3041,6 +3043,7 @@ id frame2
 id frame3
 id frame4
 id frame5
+id framecard1
 id frost
 id fullscreen_header
 id ghost_view
@@ -3188,6 +3191,7 @@ id player_image
 id player_input
 id player_name
 id players_list
+id playerturn
 id position
 id postLayout
 id pressed
@@ -3197,12 +3201,15 @@ id quit
 id radio
 id ratio
 id rectangles
+id result_frame
+id result_text
 id reverseSawtooth
 id right
 id rightGuideline
 id rightToLeft
 id right_icon
 id right_side
+id roll_result
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -3486,6 +3493,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dice_result
 layout fragment_board
 layout fragment_leaderboard_fragment
 layout m3_alert_dialog

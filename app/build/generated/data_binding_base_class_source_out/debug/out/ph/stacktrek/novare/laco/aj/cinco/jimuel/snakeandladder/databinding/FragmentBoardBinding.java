@@ -4,10 +4,12 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -27,14 +29,23 @@ public final class FragmentBoardBinding implements ViewBinding {
   public final ConstraintLayout fragmentContainer;
 
   @NonNull
-  public final Button myButton1;
+  public final FrameLayout framecard1;
+
+  @NonNull
+  public final AppCompatButton myButton1;
+
+  @NonNull
+  public final ImageView playerturn;
 
   private FragmentBoardBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout boardView,
-      @NonNull ConstraintLayout fragmentContainer, @NonNull Button myButton1) {
+      @NonNull ConstraintLayout fragmentContainer, @NonNull FrameLayout framecard1,
+      @NonNull AppCompatButton myButton1, @NonNull ImageView playerturn) {
     this.rootView = rootView;
     this.boardView = boardView;
     this.fragmentContainer = fragmentContainer;
+    this.framecard1 = framecard1;
     this.myButton1 = myButton1;
+    this.playerturn = playerturn;
   }
 
   @Override
@@ -72,14 +83,26 @@ public final class FragmentBoardBinding implements ViewBinding {
 
       ConstraintLayout fragmentContainer = (ConstraintLayout) rootView;
 
+      id = R.id.framecard1;
+      FrameLayout framecard1 = ViewBindings.findChildViewById(rootView, id);
+      if (framecard1 == null) {
+        break missingId;
+      }
+
       id = R.id.my_button1;
-      Button myButton1 = ViewBindings.findChildViewById(rootView, id);
+      AppCompatButton myButton1 = ViewBindings.findChildViewById(rootView, id);
       if (myButton1 == null) {
         break missingId;
       }
 
+      id = R.id.playerturn;
+      ImageView playerturn = ViewBindings.findChildViewById(rootView, id);
+      if (playerturn == null) {
+        break missingId;
+      }
+
       return new FragmentBoardBinding((ConstraintLayout) rootView, boardView, fragmentContainer,
-          myButton1);
+          framecard1, myButton1, playerturn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

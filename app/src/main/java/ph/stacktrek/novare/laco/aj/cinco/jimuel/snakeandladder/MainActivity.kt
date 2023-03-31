@@ -7,14 +7,16 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatImageView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAdapter
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.AddPlayerBinding
@@ -32,6 +34,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var playerDAO: PlayerDAO
     private lateinit var itemTouchHelper: ItemTouchHelper
 
+    private lateinit var parentView: ViewGroup
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var button: Button
+
+    private var page = 0
 
 
 
@@ -52,17 +59,13 @@ class MainActivity : AppCompatActivity() {
         val textView = TextView(this) // create a new TextView object
         frameLayout.addView(textView) // add the TextView to the FrameLayout
 
-        val startButton = findViewById<AppCompatButton>(R.id.start_button)
-        val addButton = findViewById<AppCompatButton>(R.id.add_button)
 
+        binding.trophy.setOnClickListener {
 
-        val trophyImageView = findViewById<AppCompatImageView>(R.id.trophy)
+            page = 1
 
-        trophyImageView.setOnClickListener {
-
-
-            startButton.visibility = View.GONE
-            addButton.visibility = View.GONE
+            binding.addButton.visibility = View.INVISIBLE
+            binding.startButton.visibility = View.INVISIBLE
 
             val fragmentManager = supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
@@ -77,15 +80,20 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        addButton.setOnClickListener {
+        binding.addButton.setOnClickListener {
             showAddPlayerDialogue().show()
         }
 
-        startButton.setOnClickListener {
+        binding.startButton.setOnClickListener {
 
+            page = 2
 
-            startButton.visibility = View.GONE
-            addButton.visibility = View.GONE
+            parentView = binding.playersList.parent as ViewGroup
+            parentView.removeView(binding.playersList)
+
+            binding.addButton.visibility = View.INVISIBLE
+            binding.startButton.visibility = View.INVISIBLE
+
 
             val fragmentManager = supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
@@ -127,7 +135,63 @@ class MainActivity : AppCompatActivity() {
                 dialogueAddPlayerBinding.avatar1.setOnClickListener {
                     val image = BitmapFactory.decodeResource(
                         applicationContext.resources,
-                        R.drawable.avatar1
+                        R.drawable.lobby1
+                    )
+                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val fileOutputStream = FileOutputStream(file)
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+                    fileOutputStream.flush()
+                    fileOutputStream.close()
+                    imagePath = file.absolutePath
+
+                }
+
+                dialogueAddPlayerBinding.avatar2.setOnClickListener {
+                    val image = BitmapFactory.decodeResource(
+                        applicationContext.resources,
+                        R.drawable.lobby2
+                    )
+                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val fileOutputStream = FileOutputStream(file)
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+                    fileOutputStream.flush()
+                    fileOutputStream.close()
+                    imagePath = file.absolutePath
+
+                }
+
+                dialogueAddPlayerBinding.avatar3.setOnClickListener {
+                    val image = BitmapFactory.decodeResource(
+                        applicationContext.resources,
+                        R.drawable.lobby3
+                    )
+                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val fileOutputStream = FileOutputStream(file)
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+                    fileOutputStream.flush()
+                    fileOutputStream.close()
+                    imagePath = file.absolutePath
+
+                }
+
+                dialogueAddPlayerBinding.avatar4.setOnClickListener {
+                    val image = BitmapFactory.decodeResource(
+                        applicationContext.resources,
+                        R.drawable.lobby4
+                    )
+                    val file = File(applicationContext.filesDir, "main_image.jpg")
+                    val fileOutputStream = FileOutputStream(file)
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+                    fileOutputStream.flush()
+                    fileOutputStream.close()
+                    imagePath = file.absolutePath
+
+                }
+
+                dialogueAddPlayerBinding.avatar5.setOnClickListener {
+                    val image = BitmapFactory.decodeResource(
+                        applicationContext.resources,
+                        R.drawable.lobby5
                     )
                     val file = File(applicationContext.filesDir, "main_image.jpg")
                     val fileOutputStream = FileOutputStream(file)
@@ -158,9 +222,28 @@ class MainActivity : AppCompatActivity() {
                 create()
             }
         }
+    }
+    override fun onBackPressed() {
 
+            binding.addButton.visibility = View.VISIBLE
+            binding.startButton.visibility = View.VISIBLE
 
+        recyclerView = binding.playersList
 
+        if (recyclerView.parent == null) {
+            binding.home.addView(recyclerView)
+
+        } else {
+            // Handle the default back press behavior
+            super.onBackPressed()
+        }
+
+        val fragmentManager = supportFragmentManager
+        if (fragmentManager.backStackEntryCount > 0) {
+            fragmentManager.popBackStack()
+        } else {
+            super.onBackPressed()
+        }
     }
 
 }

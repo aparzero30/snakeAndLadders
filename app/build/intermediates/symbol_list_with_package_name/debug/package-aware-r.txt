@@ -2741,6 +2741,11 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable leader_back
 drawable leader_wizard
+drawable lobby1
+drawable lobby2
+drawable lobby3
+drawable lobby4
+drawable lobby5
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -2920,7 +2925,7 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
-id board
+id boardView
 id bottom
 id bottomGuideline
 id bounce
@@ -3136,6 +3141,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id my_button
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3174,11 +3180,6 @@ id pathRelative
 id peekHeight
 id percent
 id pin
-id player1
-id player2
-id player3
-id player4
-id player5
 id player_image
 id player_input
 id player_name
@@ -3198,7 +3199,6 @@ id rightGuideline
 id rightToLeft
 id right_icon
 id right_side
-id roll_button
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -3252,7 +3252,6 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
-id sound
 id south
 id spacer
 id special_effects_controller_view_tag
@@ -3309,6 +3308,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id tile1
 id time
 id title
 id titleDividerNoCustom
@@ -3544,6 +3544,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout tile
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description

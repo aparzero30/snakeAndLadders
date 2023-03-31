@@ -27,8 +27,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/quit"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/main_quit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
@@ -38,8 +38,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/trophy"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/main_trophy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/quit"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="@+id/topGuideline" />
 
 
-   
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/topGuideline"
@@ -93,18 +93,6 @@
         app:layout_constraintStart_toStartOf="parent"
         >
 
-    <TextView
-        android:id="@+id/leaderboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:fontFamily="monospace"
-        android:text="Players(count)"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/leftGuideline"
-        app:layout_constraintTop_toTopOf="@+id/sound"
-        />
 
     </FrameLayout>
 
@@ -130,10 +118,6 @@
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
         android:layout_marginBottom="5dp"
         />
-
-
-
-
 
 
 

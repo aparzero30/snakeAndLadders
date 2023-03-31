@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
 
 
             parentView = binding.playersList.parent as ViewGroup
-            parentView.removeView(binding.playersList)
+//            parentView.removeView(binding.playersList)
 
             binding.addButton.visibility = View.INVISIBLE
             binding.startButton.visibility = View.INVISIBLE

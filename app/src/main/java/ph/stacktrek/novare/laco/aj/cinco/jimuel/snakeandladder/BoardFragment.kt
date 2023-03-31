@@ -1,6 +1,8 @@
 package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 
 import android.content.Context
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,6 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.FragmentBoardBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,7 +33,9 @@ class BoardFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding: FragmentBoardBinding
-    private lateinit var currentPlayer: Player
+    private var currentPlayer = 0;
+    private lateinit var player:Player;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -47,37 +52,53 @@ class BoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val players = arguments?.getParcelableArrayList<Player>("key")
+        val players = arguments?.getParcelableArrayList<Player>("key");
+
+//        val player = Player("John")
+//        player.imagePath = "path/to/image"
+//        player.position = 5
+//        player.place = 2
+
+       var playerCount = players?.size?.minus(1)
 
         binding = FragmentBoardBinding.inflate(inflater, container, false)
         val boardView = binding.boardView
         createBoard(boardView)
 
-        var position = 95
 
 
-        binding.myButton1.setOnClickListener {
+        setUPCurrentPlayer(players?.get(0) ?: player)
+        binding.rollButton.setOnClickListener {
             // Code to be executed when the button is clicked
 
-            println("current position : ${position}")
-
-            println("player count this is from fragment : ${players?.size}")
-
-            updateTile(position, boardView, requireContext())
 
             if (players != null) {
-                for (player in players) {
-                    // do something with the player object, e.g. print the name
-                    player.username?.let { it1 -> Log.d("Player Name", it1) }
-                    player.imagePath?.let { it1 -> Log.d("Player Icon", it1) }
-                }
+                player = players.get(currentPlayer)
+                updateTile(player, boardView, requireContext())
+                player.lastPosition = player.position
+                removeLastPosition(player.lastPosition, boardView, requireContext())
+                player.position = rollDice(player.position)
+                println("Current position of ${player.username} is ${player.position}")
+                updateTile(player, boardView, requireContext())
             }
+
+
+            if(playerCount == currentPlayer){
+                currentPlayer = 0;
+            }
+            else{
+                currentPlayer+=1;
+            }
+
+            setUPCurrentPlayer(players?.get( currentPlayer) ?: player)
+
         }
 
 
 
         return binding.root
     }
+
 
     companion object {
         /**
@@ -100,7 +121,9 @@ class BoardFragment : Fragment() {
     }
 
 
-    private fun updateTile(position: Int, boardView: LinearLayout, context: Context) {
+
+
+    private fun removeLastPosition(position: Int, boardView: LinearLayout, context: Context) {
         val boardSize = 10
         val row = boardSize - 1 - (position / boardSize)
         val col = if (row % 2 == 0) boardSize - 1 - (position % boardSize) else position % boardSize
@@ -108,10 +131,12 @@ class BoardFragment : Fragment() {
         val cellView = rowView.getChildAt(col)
         val tileLayout = cellView.findViewById<ConstraintLayout>(R.id.tile1)
 
+        tileLayout.setBackgroundResource(0)
+
         if (row % 2 == 0 && col % 2 == 0 || row % 2 != 0 && col % 2 != 0) {
-            tileLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.white))
+            tileLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.tile2))
         } else {
-            tileLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.black))
+            tileLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.tile1))
         }
     }
 
@@ -120,49 +145,47 @@ class BoardFragment : Fragment() {
 
 
 
-//    private fun createBoard(boardView: LinearLayout) {
-//        val boardSize = 10
-//        val color1 = ContextCompat.getColor(requireContext(), R.color.black)
-//        val color2 = ContextCompat.getColor(requireContext(), R.color.white)
-//
-//        for (i in 0 until boardSize) {
-//            val rowView = LinearLayout(context)
-//            rowView.orientation = LinearLayout.HORIZONTAL
-//
-//            for (j in 0 until boardSize) {
-//                val cellView = LayoutInflater.from(context).inflate(
-//                    R.layout.tile, rowView, false
-//                )
-//
-//                // Set background color based on row and column
-//                if (i % 2 == 0 && j % 2 == 0 || i % 2 != 0 && j % 2 != 0) {
-//                    cellView.setBackgroundColor(color1)
-//                } else {
-//                    cellView.setBackgroundColor(color2)
-//                }
-//
-//                // Set image for specific tiles
-//                if (i == 0 && j == 1 || i == 0 && j == 8 || i == 2 && j == 0 || i == 2 && j == 9 ||
-//                    i == 2 && j == 4 || i == 3 && j == 6 || i == 5 && j == 1 ||
-//                    i == 5 && j == 9 || i == 7 && j == 0 || i == 7 && j == 7 ||
-//                    i == 7 && j == 9 || i == 8 && j == 6 || i == 9 && j == 0 || i == 9 && j == 3 || i == 9 && j == 7
-//                ) {
-//
-//                    println("value of index ${i}")
-////                    val imageView = cellView.findViewById<ImageView>(R.id.tile_image)
-////                    imageView.setImageResource(R.drawable.board_ladder)
-//                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
-//                    cellView.background = drawable
-//                }
-//
-//                rowView.addView(cellView)
-//            }
-//
-//            boardView.addView(rowView)
-//        }
-//    }
+    fun setUPCurrentPlayer(player:Player){
 
-//
+
+
+        val bitmap = BitmapFactory.decodeFile(player.imagePath)
+        binding.playerturn.setImageBitmap(bitmap)
+        binding.playername.text = player.username
+
+    }
+    private fun rollDice(position:Int):Int{
+
+        val rollNum  = Random().nextInt(6) + 1;
+        println("wow you rolled ${rollNum}")
+        return  position +  rollNum
+    }
+
+
+
+
+
+    private fun updateTile(player:Player, boardView: LinearLayout, context: Context) {
+        val boardSize = 10
+        val row = boardSize - 1 - (player.position / boardSize)
+        val col = if (row % 2 == 0) boardSize - 1 - (player.position % boardSize) else player.position % boardSize
+        val rowView = boardView.getChildAt(row) as LinearLayout
+        val cellView = rowView.getChildAt(col)
+        val tileLayout = cellView.findViewById<ConstraintLayout>(R.id.tile1)
+
+
+        val bitmap = BitmapFactory.decodeFile(player.imagePath)
+
+        // Create a BitmapDrawable from the bitmap
+        val bitmapDrawable = BitmapDrawable(context.resources, bitmap)
+
+        // Set the bitmap drawable as the background of the tileLayout
+        tileLayout.background = bitmapDrawable
+
+
+    }
+
+
 
     private fun createBoard(boardView: LinearLayout) {
         val boardSize = 10

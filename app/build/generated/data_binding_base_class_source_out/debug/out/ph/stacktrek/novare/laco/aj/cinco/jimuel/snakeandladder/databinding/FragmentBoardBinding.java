@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -32,20 +33,25 @@ public final class FragmentBoardBinding implements ViewBinding {
   public final FrameLayout framecard1;
 
   @NonNull
-  public final AppCompatButton myButton1;
+  public final TextView playername;
 
   @NonNull
   public final ImageView playerturn;
 
+  @NonNull
+  public final AppCompatButton rollButton;
+
   private FragmentBoardBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout boardView,
       @NonNull ConstraintLayout fragmentContainer, @NonNull FrameLayout framecard1,
-      @NonNull AppCompatButton myButton1, @NonNull ImageView playerturn) {
+      @NonNull TextView playername, @NonNull ImageView playerturn,
+      @NonNull AppCompatButton rollButton) {
     this.rootView = rootView;
     this.boardView = boardView;
     this.fragmentContainer = fragmentContainer;
     this.framecard1 = framecard1;
-    this.myButton1 = myButton1;
+    this.playername = playername;
     this.playerturn = playerturn;
+    this.rollButton = rollButton;
   }
 
   @Override
@@ -89,9 +95,9 @@ public final class FragmentBoardBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.my_button1;
-      AppCompatButton myButton1 = ViewBindings.findChildViewById(rootView, id);
-      if (myButton1 == null) {
+      id = R.id.playername;
+      TextView playername = ViewBindings.findChildViewById(rootView, id);
+      if (playername == null) {
         break missingId;
       }
 
@@ -101,8 +107,14 @@ public final class FragmentBoardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.roll_button;
+      AppCompatButton rollButton = ViewBindings.findChildViewById(rootView, id);
+      if (rollButton == null) {
+        break missingId;
+      }
+
       return new FragmentBoardBinding((ConstraintLayout) rootView, boardView, fragmentContainer,
-          framecard1, myButton1, playerturn);
+          framecard1, playername, playerturn, rollButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

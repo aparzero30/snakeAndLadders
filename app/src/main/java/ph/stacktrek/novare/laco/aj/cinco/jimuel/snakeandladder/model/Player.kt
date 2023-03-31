@@ -10,12 +10,14 @@ open class Player(var username: String?) : Parcelable {
         private set
     var imagePath:String = ""
     var position: Int = 0;
+    var lastPosition: Int = 0;
     var place: Int = 0;
 
     constructor(parcel: Parcel) : this(parcel.readString()) {
         imagePath = parcel.readString().toString()
         position = parcel.readInt()
         place = parcel.readInt()
+        lastPosition = parcel.readInt()
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -23,6 +25,7 @@ open class Player(var username: String?) : Parcelable {
         parcel.writeString(imagePath)
         parcel.writeInt(position)
         parcel.writeInt(place)
+        parcel.writeInt(lastPosition)
     }
 
     override fun describeContents(): Int {

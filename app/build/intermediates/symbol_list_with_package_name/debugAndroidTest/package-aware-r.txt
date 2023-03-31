@@ -1,0 +1,3 @@
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

@@ -101,33 +101,38 @@ class MainActivity : AppCompatActivity() {
         binding.startButton.setOnClickListener {
 
 
-            page = 1
+            if(playerCount!=5){
+                page = 1
+                parentView = binding.playersList.parent as ViewGroup
+
+                binding.addButton.visibility = View.INVISIBLE
+                binding.startButton.visibility = View.INVISIBLE
+
+
+                val fragmentManager = supportFragmentManager
+                val fragmentTransaction = fragmentManager.beginTransaction()
+
+                // Replace FragmentName with the name of your fragment class
+                val fragment = BoardFragment()
+
+                val bundle = Bundle()
+                bundle.putParcelableArrayList("key", playerDAO.getPlayers())
+                fragment.arguments = bundle
+                fragmentTransaction.replace(R.id.home, fragment)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+
+
+            }
+            else {
+                Toast.makeText(applicationContext, "Add player first", Toast.LENGTH_SHORT)
+                    .show()
+            }
 
 
 
 
 
-
-            parentView = binding.playersList.parent as ViewGroup
-//            parentView.removeView(binding.playersList)
-
-            binding.addButton.visibility = View.INVISIBLE
-            binding.startButton.visibility = View.INVISIBLE
-
-
-            val fragmentManager = supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-
-            // Replace FragmentName with the name of your fragment class
-            val fragment = BoardFragment()
-
-            val bundle = Bundle()
-            bundle.putParcelableArrayList("key", playerDAO.getPlayers())
-            fragment.arguments = bundle
-
-            fragmentTransaction.replace(R.id.home, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
         }
 
         loadPlayers()

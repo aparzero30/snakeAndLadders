@@ -9,7 +9,7 @@ open class Player(var username: String?) : Parcelable {
     lateinit var userID: String
         private set
     var imagePath:String = ""
-    var position: Int = 0;
+    var position: Int = -1;
     var lastPosition: Int = 0;
     var place: Int = 0;
 

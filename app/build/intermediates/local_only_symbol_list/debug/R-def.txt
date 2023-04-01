@@ -60,6 +60,7 @@ id leftGuideline
 id player_image
 id player_input
 id player_name
+id player_position
 id playername
 id players_list
 id playerturn

@@ -1,20 +1,18 @@
 package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters
 
-import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.PlayerUserBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 import java.io.File
 
 class PlayerAdapter(private val context: Context,
-                     private var playerList:ArrayList<Player>):
+                     var playerList:ArrayList<Player>):
     RecyclerView.Adapter<PlayerAdapter.ViewHolder>() {
 
 
@@ -37,6 +35,12 @@ class PlayerAdapter(private val context: Context,
     }
 
     override fun getItemCount(): Int = playerList.size
+    fun updatePlayerList(newPlayerList: ArrayList<Player>) {
+        playerList = newPlayerList
+        notifyDataSetChanged()
+    }
+
+
 
     inner class ViewHolder(private val playerUserBinding: PlayerUserBinding):
         RecyclerView.ViewHolder(playerUserBinding.root){
@@ -44,6 +48,15 @@ class PlayerAdapter(private val context: Context,
         fun bindItems(player: Player){
 
             playerUserBinding.playerName.text = player.username
+
+
+            if(player.position!=-1){
+                var pos = player.position + 1
+                playerUserBinding.playerPosition.text = pos.toString()
+            }
+
+
+
 
             val imagePath = player.imagePath
             println("heres the path  ${imagePath}" )

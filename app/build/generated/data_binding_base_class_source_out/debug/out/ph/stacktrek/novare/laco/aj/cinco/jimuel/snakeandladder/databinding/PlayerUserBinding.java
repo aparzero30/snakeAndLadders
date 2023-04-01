@@ -26,11 +26,15 @@ public final class PlayerUserBinding implements ViewBinding {
   @NonNull
   public final TextView playerName;
 
+  @NonNull
+  public final TextView playerPosition;
+
   private PlayerUserBinding(@NonNull CardView rootView, @NonNull ImageView playerImage,
-      @NonNull TextView playerName) {
+      @NonNull TextView playerName, @NonNull TextView playerPosition) {
     this.rootView = rootView;
     this.playerImage = playerImage;
     this.playerName = playerName;
+    this.playerPosition = playerPosition;
   }
 
   @Override
@@ -72,7 +76,13 @@ public final class PlayerUserBinding implements ViewBinding {
         break missingId;
       }
 
-      return new PlayerUserBinding((CardView) rootView, playerImage, playerName);
+      id = R.id.player_position;
+      TextView playerPosition = ViewBindings.findChildViewById(rootView, id);
+      if (playerPosition == null) {
+        break missingId;
+      }
+
+      return new PlayerUserBinding((CardView) rootView, playerImage, playerName, playerPosition);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

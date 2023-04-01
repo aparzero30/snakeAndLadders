@@ -308,4 +308,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun updatePlayerList(playerList: List<Player>) {
+        playerAdapter.playerList = playerList as ArrayList<Player>
+        playerAdapter.notifyDataSetChanged()
+    }
+
 }

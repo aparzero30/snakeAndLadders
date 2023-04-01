@@ -3188,6 +3188,7 @@ int id pin 0x7f080165
 int id player_image 0x7f080166
 int id player_input 0x7f080167
 int id player_name 0x7f080168
+int id player_position 0x7f08021d
 int id playername 0x7f080169
 int id players_list 0x7f08016a
 int id playerturn 0x7f08016b

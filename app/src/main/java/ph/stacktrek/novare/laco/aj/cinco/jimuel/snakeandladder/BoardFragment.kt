@@ -4,17 +4,18 @@ import android.content.Context
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAdapter
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.FragmentBoardBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 import java.util.*
@@ -35,8 +36,13 @@ class BoardFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var binding: FragmentBoardBinding
+    private lateinit var mainBinding: ActivityMainBinding;
     private var currentPlayer = 0;
     private lateinit var player:Player;
+    private var players1 = ArrayList<Player>()
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var playerAdapter: PlayerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,14 +60,16 @@ class BoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
+
+
+
+
         val players = arguments?.getParcelableArrayList<Player>("key");
-
-
-        var players1 = ArrayList<Player>()
-
         if(players!=null){
             players1 = players
         }
+
 
 
 
@@ -98,11 +106,22 @@ class BoardFragment : Fragment() {
             }
 
 
-            players1.get(currentPlayer).position = rollDice(players1.get(currentPlayer).position)
+            var rollPosition  = rollDice(players1.get(currentPlayer).position)
+
+            if(rollPosition == 0){
+                rollPosition = 37;
+            }
 
 
+            val mainActivity = activity as MainActivity
+            mainActivity.updatePlayerList(players1)
+
+
+
+
+            players1.get(currentPlayer).position = rollPosition
             println("Current position of ${players1.get(currentPlayer).username} is ${players1.get(currentPlayer).position}")
-            updateTile(players1.get(currentPlayer), boardView, requireContext())
+            updatePlayerTiles(boardView)
 
 
             if(playerCount == currentPlayer){
@@ -114,7 +133,6 @@ class BoardFragment : Fragment() {
             setUPCurrentPlayer(players?.get( currentPlayer) ?: player)
 
         }
-
 
 
         return binding.root
@@ -160,6 +178,14 @@ class BoardFragment : Fragment() {
             tileLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.tile1))
         }
 
+        if(position==0 || position==3 || position==7 || position==13 || position==20 || position==27 || position==29 || position==41 || position==49
+            || position==66 || position==70 || position==75 || position== 79 || position== 91 || position==98
+
+        ){
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
+            cellView.background = drawable
+        }
+
         val textView = cellView.findViewById<TextView>(R.id.tile_text)
         val positionReal = position +1
         textView.text = positionReal.toString()
@@ -173,12 +199,22 @@ class BoardFragment : Fragment() {
     fun setUPCurrentPlayer(player:Player){
 
 
-
         val bitmap = BitmapFactory.decodeFile(player.imagePath)
         binding.playerturn.setImageBitmap(bitmap)
         binding.playername.text = player.username
 
     }
+
+
+
+
+
+
+
+
+
+
+
     private fun rollDice(position:Int):Int{
 
 
@@ -188,6 +224,16 @@ class BoardFragment : Fragment() {
         return  position +  rollNum
 
     }
+
+    private fun updatePlayerTiles(boardView: LinearLayout){
+        for (currentPlayer in players1) {
+            if(currentPlayer.position!=-1){
+                updateTile(currentPlayer, boardView, requireContext())
+            }
+        }
+    }
+
+
 
 
 
@@ -211,7 +257,7 @@ class BoardFragment : Fragment() {
         tileLayout.background = bitmapDrawable
 
 
-
+            tileLayout.background = bitmapDrawable
 
     }
 
@@ -320,8 +366,8 @@ class BoardFragment : Fragment() {
                 ) {
 
                     textView.text = ""
-                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
-                    cellView.background = drawable
+//                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
+//                    cellView.background = drawable
                 }
 
 

@@ -1,6 +1,6 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="225dp"
+    android:layout_width="240dp"
     android:layout_height="62dp"
     android:background="@color/bg_color"
     app:cardBackgroundColor="#32B092"
@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="65dp"
             android:gravity="center_vertical"
             android:text="PlayerName"
             android:textColor="#FFFFFF"
@@ -28,19 +28,31 @@
             android:textStyle="bold" />
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3" />
 
     </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/player_position"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="190dp"
+        android:gravity="center_vertical"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/player_image"

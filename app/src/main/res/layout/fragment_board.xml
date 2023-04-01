@@ -27,7 +27,7 @@
     <FrameLayout
         android:id="@+id/framecard"
         android:layout_width="200dp"
-        android:layout_height="240dp"
+        android:layout_height="260dp"
         android:background="@color/player_color"
         app:layout_constraintStart_toEndOf="@id/boardView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,11 +53,10 @@
             android:layout_height="wrap_content"
             android:text="Player1's turn"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="50dp"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textAllCaps="true"
-
             tools:ignore="RtlCompat" />
 
         <androidx.appcompat.widget.AppCompatButton

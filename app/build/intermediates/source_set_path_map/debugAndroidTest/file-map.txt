@@ -1,7 +1,7 @@
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-core-1.5.0-0 C:\Users\jimci\.gradle\caches\transforms-3\9625a4369847c3660983c501a7b3626b\transformed\core-1.5.0\res
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-annotation-experimental-1.3.0-1 C:\Users\jimci\.gradle\caches\transforms-3\9fae957ef0e1266a83e5188cb210102e\transformed\annotation-experimental-1.3.0\res
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-androidTest-2 C:\Users\jimci\OneDrive\Desktop\snakeAndLadders\app\build\generated\res\resValues\androidTest\debug
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-androidTest-3 C:\Users\jimci\OneDrive\Desktop\snakeAndLadders\app\build\generated\res\rs\androidTest\debug
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-mergeDebugAndroidTestResources-4 C:\Users\jimci\OneDrive\Desktop\snakeAndLadders\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-mergeDebugAndroidTestResources-5 C:\Users\jimci\OneDrive\Desktop\snakeAndLadders\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-merged_res-6 C:\Users\jimci\OneDrive\Desktop\snakeAndLadders\app\build\intermediates\merged_res\debugAndroidTest
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-core-1.5.0-0 C:\Users\arvi.laco\.gradle\caches\transforms-3\9625a4369847c3660983c501a7b3626b\transformed\core-1.5.0\res
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-annotation-experimental-1.3.0-1 C:\Users\arvi.laco\.gradle\caches\transforms-3\9fae957ef0e1266a83e5188cb210102e\transformed\annotation-experimental-1.3.0\res
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-androidTest-2 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\generated\res\resValues\androidTest\debug
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-androidTest-3 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\generated\res\rs\androidTest\debug
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-mergeDebugAndroidTestResources-4 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-mergeDebugAndroidTestResources-5 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-merged_res-6 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\intermediates\merged_res\debugAndroidTest

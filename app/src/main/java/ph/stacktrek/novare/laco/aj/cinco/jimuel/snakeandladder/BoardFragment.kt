@@ -2,6 +2,7 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 
 import android.content.Context
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,7 +19,6 @@ import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAd
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.FragmentBoardBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
-import java.util.*
 import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
@@ -79,6 +79,7 @@ class BoardFragment : Fragment() {
         binding = FragmentBoardBinding.inflate(inflater, container, false)
         val boardView = binding.boardView
         createBoard(boardView)
+        updatePlayerTiles(boardView)
 
 
 
@@ -107,7 +108,76 @@ class BoardFragment : Fragment() {
 
             if(rollPosition == 0){
                 rollPosition = 37;
+                portalMessageLadder(rollPosition+1)
             }
+
+            if(rollPosition == 3){
+                rollPosition = 13;
+                portalMessageLadder(rollPosition+1)
+            }
+
+            if(rollPosition == 7){
+                rollPosition = 29;
+                portalMessageLadder(rollPosition+1)
+            }
+
+            if(rollPosition == 20){
+                rollPosition = 41;
+                portalMessageLadder(rollPosition+1)
+            }
+
+            if(rollPosition == 27){
+                rollPosition = 75;
+                portalMessageLadder(rollPosition+1)
+            }
+
+            if(rollPosition == 49){
+                rollPosition = 66;
+                portalMessageLadder(rollPosition+1)
+            }
+
+            if(rollPosition == 79){
+                rollPosition = 98;
+                portalMessageLadder(rollPosition+1)
+            }
+
+            // snake
+
+            if(rollPosition == 96){
+                rollPosition = 77;
+                portalMessageSnake(rollPosition+1)
+            }
+
+            if(rollPosition == 94){
+                rollPosition = 55;
+                portalMessageSnake(rollPosition+1)
+            }
+
+            if(rollPosition == 87){
+                rollPosition = 23;
+                portalMessageSnake(rollPosition+1)
+            }
+
+            if(rollPosition == 61){
+                rollPosition = 17;
+                portalMessageSnake(rollPosition+1)
+            }
+
+            if(rollPosition == 47){
+                rollPosition = 25;
+                portalMessageSnake(rollPosition+1)
+            }
+
+            if(rollPosition == 35){
+                rollPosition = 5;
+                portalMessageSnake(rollPosition+1)
+            }
+
+            if(rollPosition == 31){
+                rollPosition = 9;
+                portalMessageSnake(rollPosition+1)
+            }
+
 
             val mainActivity = activity as MainActivity
             mainActivity.updatePlayerList(players1)
@@ -172,10 +242,18 @@ class BoardFragment : Fragment() {
         }
 
         if(position==0 || position==3 || position==7 || position==13 || position==20 || position==27 || position==29 || position==41 || position==49
-            || position==66 || position==70 || position==75 || position== 79 || position== 91 || position==98
+            || position==66 || position==70 || position==75 || position== 79 || position== 91 || position==98 || position==37
 
         ){
             val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
+            cellView.background = drawable
+        }
+
+        if(position==96 || position==77 || position==94 || position==55 || position==87 || position==23 || position==61 || position==17 || position==47
+            || position==25 || position==35 || position==5 || position== 31 || position== 9
+
+        ){
+            val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_snake)
             cellView.background = drawable
         }
 
@@ -327,28 +405,24 @@ class BoardFragment : Fragment() {
                 // Set image for specific tiles ladder
                 if (i == 0 && j == 1 || i == 0 && j == 8 || i == 2 && j == 0 || i == 2 && j == 9 ||
                     i == 2 && j == 4 || i == 3 && j == 6 || i == 5 && j == 1 ||
-                    i == 5 && j == 9 || i == 7 && j == 0 || i == 7 && j == 7 ||
+                    i == 5 && j == 9 || i == 7 && j == 0 || i == 7 && j == 7 || i == 6 && j == 2 ||
                     i == 7 && j == 9 || i == 8 && j == 6 || i == 9 && j == 0 || i == 9 && j == 3 || i == 9 && j == 7
                 ) {
 
                     val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
                     cellView.background = drawable
-                    textView.text = ""
-
                 }
 
 
 
-                // Set image for specific tiles snkae
+                // Set image for specific tiles snake
                 if (i == 0 && j == 3 || i == 2 && j == 2 || i == 0 && j == 5 || i == 4 && j == 4
                     || i == 1 && j == 7 || i == 7 && j == 3 || i == 3 && j == 1 || i == 8 && j == 2
                     || i == 5 && j == 7 || i == 7 && j == 5 || i == 6 && j == 4 || i == 9 && j == 5
                     || i == 6 && j == 8 || i == 9 && j == 9
                 ) {
-
-                    textView.text = ""
-//                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
-//                    cellView.background = drawable
+                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_snake)
+                    cellView.background = drawable
                 }
 
                 if(leftToRight){
@@ -363,6 +437,14 @@ class BoardFragment : Fragment() {
 
             boardView.addView(rowView)
         }
+    }
+
+    fun portalMessageLadder(position: Int) {
+        Toast.makeText(requireContext(), "You've entered a warp portal! You are transported in ${position}", Toast.LENGTH_SHORT).show()
+    }
+
+    fun portalMessageSnake(position: Int) {
+        Toast.makeText(requireContext(), "You've entered a warp portal! You are sent back in ${position}", Toast.LENGTH_SHORT).show()
     }
 
 

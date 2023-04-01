@@ -3043,7 +3043,7 @@ id frame2
 id frame3
 id frame4
 id frame5
-id framecard1
+id framecard
 id frost
 id fullscreen_header
 id ghost_view

@@ -30,7 +30,7 @@ public final class FragmentBoardBinding implements ViewBinding {
   public final ConstraintLayout fragmentContainer;
 
   @NonNull
-  public final FrameLayout framecard1;
+  public final FrameLayout framecard;
 
   @NonNull
   public final TextView playername;
@@ -42,13 +42,13 @@ public final class FragmentBoardBinding implements ViewBinding {
   public final AppCompatButton rollButton;
 
   private FragmentBoardBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout boardView,
-      @NonNull ConstraintLayout fragmentContainer, @NonNull FrameLayout framecard1,
+      @NonNull ConstraintLayout fragmentContainer, @NonNull FrameLayout framecard,
       @NonNull TextView playername, @NonNull ImageView playerturn,
       @NonNull AppCompatButton rollButton) {
     this.rootView = rootView;
     this.boardView = boardView;
     this.fragmentContainer = fragmentContainer;
-    this.framecard1 = framecard1;
+    this.framecard = framecard;
     this.playername = playername;
     this.playerturn = playerturn;
     this.rollButton = rollButton;
@@ -89,9 +89,9 @@ public final class FragmentBoardBinding implements ViewBinding {
 
       ConstraintLayout fragmentContainer = (ConstraintLayout) rootView;
 
-      id = R.id.framecard1;
-      FrameLayout framecard1 = ViewBindings.findChildViewById(rootView, id);
-      if (framecard1 == null) {
+      id = R.id.framecard;
+      FrameLayout framecard = ViewBindings.findChildViewById(rootView, id);
+      if (framecard == null) {
         break missingId;
       }
 
@@ -114,7 +114,7 @@ public final class FragmentBoardBinding implements ViewBinding {
       }
 
       return new FragmentBoardBinding((ConstraintLayout) rootView, boardView, fragmentContainer,
-          framecard1, playername, playerturn, rollButton);
+          framecard, playername, playerturn, rollButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

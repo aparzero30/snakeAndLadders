@@ -74,7 +74,7 @@ class BoardFragment : Fragment() {
 
 
 
-       var playerCount = players?.size?.minus(1)
+        var playerCount = players?.size?.minus(1)
 
         binding = FragmentBoardBinding.inflate(inflater, container, false)
         val boardView = binding.boardView
@@ -96,15 +96,12 @@ class BoardFragment : Fragment() {
                 updateTile(players1.get(currentPlayer), boardView, requireContext())
             }
 
-
             players1.get(currentPlayer).lastPosition =  players1.get(currentPlayer).position
-
 
             if(initPos!=-1){
 
                 removeLastPosition( players1.get(currentPlayer).lastPosition , boardView, requireContext())
             }
-
 
             var rollPosition  = rollDice(players1.get(currentPlayer).position)
 
@@ -112,12 +109,8 @@ class BoardFragment : Fragment() {
                 rollPosition = 37;
             }
 
-
             val mainActivity = activity as MainActivity
             mainActivity.updatePlayerList(players1)
-
-
-
 
             players1.get(currentPlayer).position = rollPosition
             println("Current position of ${players1.get(currentPlayer).username} is ${players1.get(currentPlayer).position}")
@@ -193,9 +186,6 @@ class BoardFragment : Fragment() {
 
 
 
-
-
-
     fun setUPCurrentPlayer(player:Player){
 
 
@@ -204,15 +194,6 @@ class BoardFragment : Fragment() {
         binding.playername.text = player.username
 
     }
-
-
-
-
-
-
-
-
-
 
 
     private fun rollDice(position:Int):Int{
@@ -257,7 +238,7 @@ class BoardFragment : Fragment() {
         tileLayout.background = bitmapDrawable
 
 
-            tileLayout.background = bitmapDrawable
+        tileLayout.background = bitmapDrawable
 
     }
 
@@ -267,7 +248,7 @@ class BoardFragment : Fragment() {
         val boardSize = 10
         val color1 = ContextCompat.getColor(requireContext(), R.color.tile2)
         val color2 = ContextCompat.getColor(requireContext(), R.color.tile1)
-//        val color2 = ContextCompat.getColor(requireContext(), R.color.black)
+
 
 
         var count = 100
@@ -369,8 +350,6 @@ class BoardFragment : Fragment() {
 //                    val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.board_ladder)
 //                    cellView.background = drawable
                 }
-
-
 
                 if(leftToRight){
                     count = count - 1;

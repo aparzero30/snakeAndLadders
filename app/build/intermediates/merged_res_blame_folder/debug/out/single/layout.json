@@ -1,7 +1,7 @@
 [
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:/layout/player_user.xml",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/player_user.xml"
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:/layout/fragment_board.xml",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/fragment_board.xml"
     },
     {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:\\layout\\tile.xml",

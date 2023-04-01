@@ -53,7 +53,7 @@ id frame2
 id frame3
 id frame4
 id frame5
-id framecard1
+id framecard
 id home
 id leaderboard
 id leftGuideline

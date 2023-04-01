@@ -178,13 +178,42 @@ class BoardFragment : Fragment() {
                 portalMessageSnake(rollPosition+1)
             }
 
-
             val mainActivity = activity as MainActivity
             mainActivity.updatePlayerList(players1)
 
             players1.get(currentPlayer).position = rollPosition
+
+
+            var currentPosition =     players1.get(currentPlayer).position
+
+
+            if(currentPosition==99){
+
+                Toast.makeText(requireContext(), "${players1.get(currentPlayer).username} has won", Toast.LENGTH_SHORT).show()
+
+                //todo do something here
+
+            }
+            if(currentPosition>99){
+                var excess  = currentPosition - 99;
+                players1.get(currentPlayer).position = 99 - excess
+            }
+
+
+
+
+
+
+
+
+
             println("Current position of ${players1.get(currentPlayer).username} is ${players1.get(currentPlayer).position}")
             updatePlayerTiles(boardView)
+
+            if(players1.get(currentPlayer).position>99){
+
+            }
+
 
 
             if(playerCount == currentPlayer){
@@ -305,6 +334,9 @@ class BoardFragment : Fragment() {
         val rowView = boardView.getChildAt(row) as LinearLayout
         val cellView = rowView.getChildAt(col)
         val tileLayout = cellView.findViewById<ConstraintLayout>(R.id.tile1)
+
+        val textView = cellView.findViewById<TextView>(R.id.tile_text)
+        textView.text = ""
 
 
         val bitmap = BitmapFactory.decodeFile(player.imagePath)

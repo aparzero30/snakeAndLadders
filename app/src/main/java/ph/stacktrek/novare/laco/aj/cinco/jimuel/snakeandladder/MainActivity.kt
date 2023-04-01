@@ -167,6 +167,17 @@ class MainActivity : AppCompatActivity() {
 
                 var imagePath = "a"
 
+                val image = BitmapFactory.decodeResource(
+                    applicationContext.resources,
+                    R.drawable.lobby1
+                )
+                val file = File(applicationContext.filesDir, "default.jpg")
+                val fileOutputStream = FileOutputStream(file)
+                image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+                fileOutputStream.flush()
+                fileOutputStream.close()
+                imagePath = file.absolutePath
+
 
                 dialogueAddPlayerBinding.avatar1.setOnClickListener {
                     val image = BitmapFactory.decodeResource(
@@ -242,19 +253,17 @@ class MainActivity : AppCompatActivity() {
                     val name = dialogueAddPlayerBinding.playerName.text.toString().trim()
                     if (name.isNotEmpty()) {
 
-                        if(!imagePath.equals("a")) {
+
                             val player = Player(name)
                             player.imagePath = imagePath;
                             val playerDAO = PlayertDAOStubImplementation()
                             playerDAO.addPlayer(player)
                             playerAdapter.addPlayer(player)
                             playerCount -= 1
-                        } else {
-                            Toast.makeText(context, "Player icon cannot be empty", Toast.LENGTH_SHORT)
-                                .show()
-                        }
+
+
                     } else {
-                        Toast.makeText(context, "Player name and icon cannot be empty", Toast.LENGTH_SHORT)
+                        Toast.makeText(context, "Player name  cannot be empty", Toast.LENGTH_SHORT)
                             .show()
                     }
                 })

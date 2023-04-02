@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,8 +42,7 @@ class BoardFragment : Fragment() {
     private lateinit var player:Player;
     private var players1 = ArrayList<Player>()
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var playerAdapter: PlayerAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,18 +60,10 @@ class BoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
-
-
-
-
         val players = arguments?.getParcelableArrayList<Player>("key");
         if(players!=null){
             players1 = players
         }
-
-
-
 
 
         var playerCount = players?.size?.minus(1)
@@ -83,13 +75,22 @@ class BoardFragment : Fragment() {
 
 
 
-        setUPCurrentPlayer(players?.get(0) ?: player)
+        if (players != null) {
+            if(players.isNotEmpty()){
+                setUPCurrentPlayer(players?.get(0) ?: player)
+            }
+        }
+
+
+
+
         binding.rollButton.setOnClickListener {
 
+
+
+
+
             val initPos = players1.get(currentPlayer).position;
-            println("intial post ${initPos}")
-
-
 
 
             if(initPos!=-1){
@@ -105,6 +106,16 @@ class BoardFragment : Fragment() {
             }
 
             var rollPosition  = rollDice(players1.get(currentPlayer).position)
+
+
+
+
+            if(rollPosition >99){
+                var excess  = rollPosition  - 99;
+                rollPosition = 99 - excess;
+
+            }
+
 
             if(rollPosition == 0){
                 rollPosition = 37;
@@ -178,41 +189,32 @@ class BoardFragment : Fragment() {
                 portalMessageSnake(rollPosition+1)
             }
 
+
             val mainActivity = activity as MainActivity
-            mainActivity.updatePlayerList(players1)
+
+
+
+
+
+//            rollPosition = 99
+
 
             players1.get(currentPlayer).position = rollPosition
-
-
-            var currentPosition =     players1.get(currentPlayer).position
-
-
-            if(currentPosition==99){
-
-                Toast.makeText(requireContext(), "${players1.get(currentPlayer).username} has won", Toast.LENGTH_SHORT).show()
-
-                //todo do something here
-
-            }
-            if(currentPosition>99){
-                var excess  = currentPosition - 99;
-                players1.get(currentPlayer).position = 99 - excess
-            }
-
-
-
-
-
-
-
-
-
-            println("Current position of ${players1.get(currentPlayer).username} is ${players1.get(currentPlayer).position}")
             updatePlayerTiles(boardView)
 
-            if(players1.get(currentPlayer).position>99){
+            if(rollPosition==99){
+
+                players1.get(currentPlayer).position =  -1
+                mainActivity.updatePlayerList(players1)
+                players1.clear()
+                mainActivity.updatePlayerList(players1)
+                mainActivity.removeBoardFragment()
+                binding.rollButton.isEnabled = false
 
             }
+
+
+                mainActivity.updatePlayerList(players1)
 
 
 
@@ -222,7 +224,13 @@ class BoardFragment : Fragment() {
             else{
                 currentPlayer+=1;
             }
-            setUPCurrentPlayer(players?.get( currentPlayer) ?: player)
+
+            if (players != null) {
+                if (!players.isEmpty()) {
+                    setUPCurrentPlayer(players?.get( currentPlayer) ?: player)
+                }
+            }
+
 
         }
 
@@ -418,13 +426,8 @@ class BoardFragment : Fragment() {
                     R.layout.tile, rowView, false
                 )
 
-
-
-
                 val textView = cellView.findViewById<TextView>(R.id.tile_text)
                 textView.text = count.toString()
-
-
 
 
                 // Set background color based on row and column

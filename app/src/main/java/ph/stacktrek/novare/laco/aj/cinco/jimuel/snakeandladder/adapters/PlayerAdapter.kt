@@ -22,6 +22,12 @@ class PlayerAdapter(private val context: Context,
         notifyItemInserted(0)
     }
 
+    fun resetPlayers(){
+        playerList.clear();
+        notifyDataSetChanged()
+    }
+
+
 
 
 
@@ -48,6 +54,10 @@ class PlayerAdapter(private val context: Context,
         fun bindItems(player: Player){
 
             playerUserBinding.playerName.text = player.username
+
+            if(player.position==-1){
+                playerUserBinding.playerPosition.text = ""
+            }
 
 
             if(player.position!=-1){

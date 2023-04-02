@@ -4,7 +4,7 @@ interface PlayerDAO {
 
     fun addPlayer(player: Player)
     fun getPlayers(): ArrayList<Player>
-    fun deleteProduct(product: Player)
+    fun deletePlayer(product: Player)
 
 }
 
@@ -18,8 +18,13 @@ class PlayertDAOStubImplementation: PlayerDAO{
 
     override fun getPlayers(): ArrayList<Player>  = playerList
 
+    fun resetPlayers(players:ArrayList<Player>) {
+        playerList = players
+    }
+
+
 // TODO("Not yet implemented")
-    override fun deleteProduct(product: Player) {
+    override fun deletePlayer(product: Player) {
 
     }
 

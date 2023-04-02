@@ -165,6 +165,11 @@ class MainActivity : AppCompatActivity() {
                 AddPlayerBinding.inflate(it.layoutInflater)
             with(builder) {
 
+
+
+
+
+
                 var imagePath = "a"
 
                 val image = BitmapFactory.decodeResource(
@@ -254,12 +259,19 @@ class MainActivity : AppCompatActivity() {
                     if (name.isNotEmpty()) {
 
 
+
+
                             val player = Player(name)
                             player.imagePath = imagePath;
                             val playerDAO = PlayertDAOStubImplementation()
-                            playerDAO.addPlayer(player)
+
+
+                        playerDAO.addPlayer(player)
+
                             playerAdapter.addPlayer(player)
                             playerCount -= 1
+
+                        println("heres thje new player PPPPOSSITION ${player.position}")
 
 
                     } else {
@@ -275,7 +287,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
+
+
+
+
+
     override fun onBackPressed() {
+
+
 
 
         println("the page is ${page}")
@@ -290,8 +311,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-
         recyclerView = binding.playersList
 
         if (recyclerView.parent == null) {
@@ -301,13 +320,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
         val fragmentManager = supportFragmentManager
         val backStackEntryCount = fragmentManager.backStackEntryCount
-
-
-
 
 
 
@@ -322,9 +336,36 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    fun removeBoardFragment(){
+
+        val fragmentManager = supportFragmentManager
+        val backStackEntryCount = fragmentManager.backStackEntryCount
+        binding.addButton.visibility = View.VISIBLE
+        binding.startButton.visibility = View.VISIBLE
+
+
+        if (backStackEntryCount > 0) {
+            // Remove the latest fragment from the back stack
+            fragmentManager.popBackStack(
+                fragmentManager.getBackStackEntryAt(backStackEntryCount - 1).id,
+                FragmentManager.POP_BACK_STACK_INCLUSIVE
+            )
+        }
+
+    }
+
     fun updatePlayerList(playerList: List<Player>) {
         playerAdapter.playerList = playerList as ArrayList<Player>
+        val playerDAO = PlayertDAOStubImplementation()
+
         playerAdapter.notifyDataSetChanged()
+    }
+    fun resetPlayerList(){
+
+    }
+    fun setPlayerCount(){
+       playerCount = 5
     }
 
 }

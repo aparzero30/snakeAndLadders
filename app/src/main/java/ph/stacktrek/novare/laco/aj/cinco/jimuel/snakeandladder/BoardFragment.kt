@@ -1,11 +1,12 @@
 package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.BitmapFactory
-import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,12 +14,14 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.RecyclerView
-import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAdapter
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.FragmentBoardBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.MapLegendBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.PortalDialogueBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.WinnerPageBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 import kotlin.collections.ArrayList
 
@@ -89,6 +92,8 @@ class BoardFragment : Fragment() {
 
 
 
+            var ladder = true
+
 
 
             val initPos = players1[currentPlayer].position;
@@ -114,80 +119,87 @@ class BoardFragment : Fragment() {
             if(rollPosition >99){
                 var excess  = rollPosition  - 99;
                 rollPosition = 99 - excess;
-
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
 
             if(rollPosition == 0){
                 rollPosition = 37;
-                portalMessageLadder(rollPosition+1)
+
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 3){
                 rollPosition = 13;
-                portalMessageLadder(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 7){
                 rollPosition = 29;
-                portalMessageLadder(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
+
             }
 
             if(rollPosition == 20){
                 rollPosition = 41;
-                portalMessageLadder(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 27){
                 rollPosition = 75;
-                portalMessageLadder(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
+
             }
 
             if(rollPosition == 49){
                 rollPosition = 66;
-                portalMessageLadder(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 79){
                 rollPosition = 98;
-                portalMessageLadder(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
+
+
 
             // snake
 
+            ladder = false
+
             if(rollPosition == 96){
                 rollPosition = 77;
-                portalMessageSnake(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 94){
                 rollPosition = 55;
-                portalMessageSnake(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 87){
                 rollPosition = 23;
-                portalMessageSnake(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 61){
                 rollPosition = 17;
-                portalMessageSnake(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 47){
                 rollPosition = 25;
-                portalMessageSnake(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 35){
                 rollPosition = 5;
-                portalMessageSnake(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
             if(rollPosition == 31){
                 rollPosition = 9;
-                portalMessageSnake(rollPosition+1)
+                showPortalMessage(rollPosition+1,ladder).show()
             }
 
 
@@ -208,20 +220,24 @@ class BoardFragment : Fragment() {
 
 
 
+                removeLastPosition( 99 , boardView, requireContext())
+                showWinnerDialogue(binding).show()
                 winner = players1[currentPlayer]
-                mainActivity.setWinner(winner)
                 players1[currentPlayer].position =  -1
-                mainActivity.updatePlayerList(players1)
-                players1.clear()
-                mainActivity.updatePlayerList(players1)
-                mainActivity.removeBoardFragment()
-                mainActivity.setPlayerCount()
+                updatePlayerTiles(boardView)
+
+                val boardView = binding.boardView
+                createBoard(boardView)
                 binding.rollButton.isEnabled = false
 
-            }
 
 
-            mainActivity.updatePlayerList(players1)
+            }else
+                mainActivity.updatePlayerList(players1)
+
+
+
+
 
 
 
@@ -244,6 +260,58 @@ class BoardFragment : Fragment() {
 
         return binding.root
     }
+
+
+
+
+
+    fun showPortalMessage(position:Int, ladder: Boolean): Dialog {
+
+        return this!!.let {
+            val builder = AlertDialog.Builder(requireContext())
+            var portalDialogueBinding: PortalDialogueBinding =
+                PortalDialogueBinding .inflate(it.layoutInflater)
+            with(builder) {
+
+
+                portalDialogueBinding.portaltxt.text = "You've Entered A Portal, you are sent back to ${position}"
+
+                if(ladder){
+                    portalDialogueBinding.portaltxt.text = "You've Entered A Portal, you are transported to ${position}"
+                }
+
+
+
+                setNeutralButton("OK", DialogInterface.OnClickListener { dialog, id ->
+
+                })
+
+                setView(portalDialogueBinding.root)
+                create()
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     companion object {
@@ -481,14 +549,63 @@ class BoardFragment : Fragment() {
         }
     }
 
-    fun portalMessageLadder(position: Int) {
-        Toast.makeText(requireContext(), "You've entered a warp portal! You are transported in ${position}", Toast.LENGTH_SHORT).show()
-    }
 
-    fun portalMessageSnake(position: Int) {
-        Toast.makeText(requireContext(), "You've entered a warp portal! You are sent back in ${position}", Toast.LENGTH_SHORT).show()
-    }
 
+    fun showWinnerDialogue(binding: FragmentBoardBinding): Dialog {
+
+
+
+        return this!!.let {
+            val builder = AlertDialog.Builder(requireContext())
+            var dialogueWinnerPageBinding: WinnerPageBinding =
+                WinnerPageBinding.inflate(it.layoutInflater)
+            with(builder) {
+                setPositiveButton(null, null) // Set null values for default behavior
+
+                setNegativeButton(null, null) // Set null values for default behavior
+
+                setView(dialogueWinnerPageBinding.root)
+
+                val dialog = create()
+                dialog.setOnShowListener {
+                    // Get references to the "ADD" and "CANCEL" buttons
+                    val playAgain = dialog.findViewById<AppCompatButton>(R.id.play_again)
+                    val cancelButton = dialog.findViewById<AppCompatButton>(R.id.close)
+
+
+
+
+                    val mainActivity = activity as MainActivity
+
+                    playAgain.setOnClickListener {
+                        mainActivity.setWinner(winner)
+
+                        binding.rollButton.isEnabled = true
+                        createBoard(binding.boardView)
+
+
+                        dialog.dismiss()
+                    }
+
+                    // Set the negative button to the "CANCEL" button
+                    cancelButton.setOnClickListener {
+
+
+                        mainActivity.removeBoardFragment()
+                        players1.clear()
+                        mainActivity.updatePlayerList(players1)
+                        mainActivity.setPlayerCount()
+                        mainActivity.setWinner(winner)
+                        dialog.dismiss()
+                    }
+
+
+                }
+
+                dialog
+            }
+        }
+    }
 
 
 }

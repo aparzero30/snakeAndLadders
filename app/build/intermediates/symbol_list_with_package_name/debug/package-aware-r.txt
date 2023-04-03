@@ -2830,6 +2830,7 @@ drawable notify_panel_notification_icon_bg
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable wormhole
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2996,7 +2997,6 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
-id dice
 id dimensions
 id direct
 id disableHome
@@ -3203,6 +3203,9 @@ id player_position
 id playername
 id players_list
 id playerturn
+id portal
+id portalImg
+id portaltxt
 id position
 id postLayout
 id pressed
@@ -3211,8 +3214,6 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id result_frame
-id result_text
 id reverseSawtooth
 id right
 id rightGuideline
@@ -3220,7 +3221,6 @@ id rightToLeft
 id right_icon
 id right_side
 id roll_button
-id roll_result
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -3513,7 +3513,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout dice_result
 layout fragment_board
 layout fragment_leaderboard_fragment
 layout m3_alert_dialog
@@ -3575,6 +3574,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout player_user
+layout portal_dialogue
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

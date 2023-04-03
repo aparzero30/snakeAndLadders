@@ -14,6 +14,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -22,6 +23,7 @@ import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAd
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.AddPlayerBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.MapLegendBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.WinnerPageBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayerDAO
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayertDAOStubImplementation
@@ -42,12 +44,6 @@ class MainActivity : AppCompatActivity() {
     private var playerCount = 5
 
 
-
-
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,6 +58,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
         val frameLayout = findViewById<FrameLayout>(R.id.home) // get a reference to the FrameLayout
         val textView = TextView(this) // create a new TextView object
         frameLayout.addView(textView) // add the TextView to the FrameLayout
@@ -69,10 +67,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.trophy.setOnClickListener {
 
-            if(page==1){
-                page =2
-            }else{
-                page =1;
+            if (page == 1) {
+                page = 2
+            } else {
+                page = 1;
                 println("dumaan sakne ${page}")
             }
 
@@ -91,12 +89,12 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        binding.mapLegend.setOnClickListener{
+        binding.mapLegend.setOnClickListener {
             showMapLegends().show()
         }
 
         binding.addButton.setOnClickListener {
-            if(playerCount > 0) {
+            if (playerCount > 0) {
                 showAddPlayerDialogue().show()
             } else {
                 Toast.makeText(applicationContext, "Max player reached!", Toast.LENGTH_SHORT)
@@ -107,7 +105,7 @@ class MainActivity : AppCompatActivity() {
         binding.startButton.setOnClickListener {
 
 
-            if(playerCount!=5){
+            if (playerCount != 5) {
                 page = 1
                 parentView = binding.playersList.parent as ViewGroup
 
@@ -129,14 +127,10 @@ class MainActivity : AppCompatActivity() {
                 fragmentTransaction.commit()
 
 
-            }
-            else {
+            } else {
                 Toast.makeText(applicationContext, "Add player first", Toast.LENGTH_SHORT)
                     .show()
             }
-
-
-
 
 
         }
@@ -147,11 +141,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-    fun loadPlayers(){
+    fun loadPlayers() {
         playerDAO = PlayertDAOStubImplementation()
-        playerAdapter = PlayerAdapter(applicationContext, playerDAO.getPlayers() as ArrayList<Player>)
-        with(binding.playersList){
+        playerAdapter =
+            PlayerAdapter(applicationContext, playerDAO.getPlayers() as ArrayList<Player>)
+        with(binding.playersList) {
             layoutManager = GridLayoutManager(applicationContext, 1)
             adapter = playerAdapter
 
@@ -165,10 +159,6 @@ class MainActivity : AppCompatActivity() {
             var dialogueAddPlayerBinding: AddPlayerBinding =
                 AddPlayerBinding.inflate(it.layoutInflater)
             with(builder) {
-
-
-
-
 
 
                 var imagePath = "a"
@@ -260,19 +250,15 @@ class MainActivity : AppCompatActivity() {
                     if (name.isNotEmpty()) {
 
 
-
-
-                            val player = Player(name)
-                            player.imagePath = imagePath;
-                            val playerDAO = PlayertDAOStubImplementation()
+                        val player = Player(name)
+                        player.imagePath = imagePath;
+                        val playerDAO = PlayertDAOStubImplementation()
 
 
                         playerDAO.addPlayer(player)
 
-                            playerAdapter.addPlayer(player)
-                            playerCount -= 1
-
-
+                        playerAdapter.addPlayer(player)
+                        playerCount -= 1
 
 
                     } else {
@@ -288,10 +274,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
-
-
-
 
 
     fun showMapLegends(): Dialog {
@@ -315,17 +297,14 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
 
 
-
-
         println("the page is ${page}")
 
-        if(page == 1){
+        if (page == 1) {
             binding.addButton.visibility = View.VISIBLE
             binding.startButton.visibility = View.VISIBLE
             page = 0;
-        }
-        else{
-            page = page -1;
+        } else {
+            page = page - 1;
         }
 
 
@@ -335,7 +314,6 @@ class MainActivity : AppCompatActivity() {
             binding.home.addView(recyclerView)
 
         }
-
 
 
         val fragmentManager = supportFragmentManager
@@ -355,7 +333,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun removeBoardFragment(){
+    fun removeBoardFragment() {
 
         val fragmentManager = supportFragmentManager
         val backStackEntryCount = fragmentManager.backStackEntryCount
@@ -380,19 +358,19 @@ class MainActivity : AppCompatActivity() {
         playerAdapter.notifyDataSetChanged()
     }
 
-    fun setPlayerCount(){
-       playerCount = 5
+    fun setPlayerCount() {
+        playerCount = 5
     }
 
-    fun setWinner(player:Player){
+    fun setWinner(player: Player) {
         val fragment = leaderboard_fragment.newInstance("param1", "param2")
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit()
-        fragment.addWinner(player,applicationContext)
+//        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment)
+//            .commit()
+        fragment.addWinner(player, applicationContext)
     }
 
 
 
 
 
-
-}
+    }

@@ -36,6 +36,7 @@ drawable main_quit
 drawable main_sound
 drawable main_trophy
 drawable map_legend
+drawable wormhole
 id add_button
 id add_player
 id avatar
@@ -51,7 +52,6 @@ id close
 id confetti
 id description_ladder
 id description_snake
-id dice
 id fragment_container
 id fragment_container_leaderboard
 id frame1
@@ -74,11 +74,11 @@ id player_position
 id playername
 id players_list
 id playerturn
-id result_frame
-id result_text
+id portal
+id portalImg
+id portaltxt
 id rightGuideline
 id roll_button
-id roll_result
 id snake_frame
 id snake_photo
 id start_button
@@ -102,11 +102,11 @@ id winners_list
 layout activity_leader
 layout activity_main
 layout add_player
-layout dice_result
 layout fragment_board
 layout fragment_leaderboard_fragment
 layout map_legend
 layout player_user
+layout portal_dialogue
 layout tile
 layout winner_page
 mipmap ic_launcher

@@ -26,30 +26,28 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/trophy"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/main_trophy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/topGuideline"
-        android:background="@drawable/hover_image_buttons"
-        android:padding="5dp"/>
+        android:background="@drawable/hover_image_buttons" />
 
 
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/map_legend"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/map_legend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/trophy"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/topGuideline"
         android:layout_marginRight="7dp"
-        android:background="@drawable/hover_image_buttons"
-        android:padding="5dp"/>
+        android:background="@drawable/hover_image_buttons" />
 
 
 

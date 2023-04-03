@@ -6,6 +6,7 @@
     <color name="black">#FF000000</color>
     <color name="hover">#e8e4e4</color>
     <color name="hover_image">#2d9e83</color>
+    <color name="legend_color">#328fb0</color>
     <color name="player_color">#2d9e83</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

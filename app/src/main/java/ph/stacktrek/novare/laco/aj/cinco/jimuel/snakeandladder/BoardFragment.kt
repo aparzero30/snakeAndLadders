@@ -216,7 +216,7 @@ class BoardFragment : Fragment() {
             updatePlayerTiles(boardView)
 
             //delete this
-//            rollPosition = 99
+            rollPosition = 99
 
 
             if(rollPosition==99){
@@ -280,7 +280,7 @@ class BoardFragment : Fragment() {
             with(builder) {
 
 
-                portalDialogueBinding.portaltxt.text = "You've entered a red portal! You are sent back to ${position}!"
+                portalDialogueBinding.portaltxt.text = "You are sent back to ${position}!"
 
                 if(ladder){
 
@@ -289,14 +289,14 @@ class BoardFragment : Fragment() {
                         requireContext().resources,
                         R.drawable.protal_snake
                     )
-                    val file = File(requireContext().filesDir, "avatar2.jpg")
+                    val file = File(requireContext().filesDir, "qwerty.jpg")
                     val fileOutputStream = FileOutputStream(file)
                     image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
                     fileOutputStream.flush()
                     fileOutputStream.close()
                     val bitmap = BitmapFactory.decodeFile(file.absolutePath)
                     portalDialogueBinding.portalImg.setImageBitmap(bitmap)
-                    portalDialogueBinding.portaltxt.text = "You've entered a blue portal! You are transported to ${position}!"
+                    portalDialogueBinding.portaltxt.text = "You are transported to ${position}!"
                 }
 
 

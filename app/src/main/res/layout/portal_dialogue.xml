@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:background="@color/bg_color"
     tools:context=".MainActivity"
-    android:id="@+id/portal">
+    android:id="@+id/portal"
+    android:paddingBottom="20dp">
 
 
 
@@ -26,7 +27,7 @@
 
     <TextView
         android:id="@+id/portaltxt"
-        android:layout_width="180dp"
+        android:layout_width="250dp"
         android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:text="Player1's turn"
@@ -40,4 +41,4 @@
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>\
+</androidx.constraintlayout.widget.ConstraintLayout>

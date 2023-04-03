@@ -2766,6 +2766,7 @@ drawable m3_tabs_transparent_background
 drawable main_quit
 drawable main_sound
 drawable main_trophy
+drawable map_legend
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -3207,7 +3208,6 @@ id postLayout
 id pressed
 id progress_circular
 id progress_horizontal
-id quit
 id radio
 id ratio
 id rectangles

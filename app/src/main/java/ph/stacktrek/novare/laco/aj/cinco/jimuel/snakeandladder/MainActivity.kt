@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAdapter
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.AddPlayerBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.MapLegendBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayerDAO
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayertDAOStubImplementation
@@ -90,7 +91,9 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
+        binding.mapLegend.setOnClickListener{
+            showMapLegends().show()
+        }
 
         binding.addButton.setOnClickListener {
             if(playerCount > 0) {
@@ -290,6 +293,23 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+    fun showMapLegends(): Dialog {
+        return this!!.let {
+            val builder = AlertDialog.Builder(it)
+            var dialogueMapLegendsBinding: MapLegendBinding =
+                MapLegendBinding.inflate(it.layoutInflater)
+            with(builder) {
+
+                setNeutralButton("CLOSE", DialogInterface.OnClickListener { dialog, id ->
+
+                })
+
+                setView(dialogueMapLegendsBinding.root)
+                create()
+            }
+        }
+    }
 
 
     override fun onBackPressed() {

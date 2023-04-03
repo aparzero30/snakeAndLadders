@@ -33,10 +33,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var playerAdapter: PlayerAdapter
     private lateinit var playerDAO: PlayerDAO
-    private lateinit var itemTouchHelper: ItemTouchHelper
 
     private lateinit var parentView: ViewGroup
     private lateinit var recyclerView: RecyclerView
+    private lateinit var winner: Player
     private var page = 0
     private var playerCount = 5
 
@@ -269,7 +269,7 @@ class MainActivity : AppCompatActivity() {
                             playerAdapter.addPlayer(player)
                             playerCount -= 1
 
-                        println("heres thje new player PPPPOSSITION ${player.position}")
+
 
 
                     } else {
@@ -363,5 +363,16 @@ class MainActivity : AppCompatActivity() {
     fun setPlayerCount(){
        playerCount = 5
     }
+
+    fun setWinner(player:Player){
+        val fragment = leaderboard_fragment.newInstance("param1", "param2")
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit()
+        fragment.addWinner(player,applicationContext)
+    }
+
+
+
+
+
 
 }

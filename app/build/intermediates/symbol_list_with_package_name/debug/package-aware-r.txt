@@ -2724,6 +2724,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable confetti
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2958,9 +2959,11 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id clockwise
+id close
 id closest
 id collapseActionView
 id compress
+id confetti
 id confirm_button
 id constraint
 id container
@@ -2984,6 +2987,8 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id description_ladder
+id description_snake
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -3077,6 +3082,8 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
+id ladder_frame
+id ladder_photo
 id layout
 id leaderboard
 id left
@@ -3089,6 +3096,7 @@ id linear
 id listMode
 id list_item
 id m3_side_sheet
+id map_legend
 id marquee
 id masked
 id match_constraint
@@ -3186,6 +3194,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id play_again
 id player_image
 id player_input
 id player_name
@@ -3263,6 +3272,8 @@ id skipped
 id slide
 id snackbar_action
 id snackbar_text
+id snake_frame
+id snake_photo
 id snap
 id snapMargins
 id south
@@ -3347,6 +3358,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id trophy
+id trophy_frame
 id unchecked
 id uniform
 id unlabeled
@@ -3362,6 +3374,12 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id west
+id winner_frame
+id winner_name
+id winner_page
+id winner_photo
+id winner_text
+id winners_list
 id withText
 id with_icon
 id withinBounds
@@ -3503,6 +3521,7 @@ layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
 layout m3_side_sheet_dialog
+layout map_legend
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -3561,6 +3580,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout tile
+layout winner_page
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description

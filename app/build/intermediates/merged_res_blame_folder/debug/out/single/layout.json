@@ -30,5 +30,13 @@
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:/layout/activity_main.xml",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:/layout/map_legend.xml",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/map_legend.xml"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:/layout/winner_page.xml",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/winner_page.xml"
     }
 ]

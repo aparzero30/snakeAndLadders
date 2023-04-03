@@ -199,9 +199,17 @@ class BoardFragment : Fragment() {
             players1[currentPlayer].position = rollPosition
             updatePlayerTiles(boardView)
 
+            //delete this
+//            rollPosition = 99;
+
+
             if(rollPosition==99){
 
+
+
+
                 winner = players1[currentPlayer]
+                mainActivity.setWinner(winner)
                 players1[currentPlayer].position =  -1
                 mainActivity.updatePlayerList(players1)
                 players1.clear()
@@ -213,7 +221,7 @@ class BoardFragment : Fragment() {
             }
 
 
-                mainActivity.updatePlayerList(players1)
+            mainActivity.updatePlayerList(players1)
 
 
 

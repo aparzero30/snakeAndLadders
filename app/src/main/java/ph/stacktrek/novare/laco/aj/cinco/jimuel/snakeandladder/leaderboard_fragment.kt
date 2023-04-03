@@ -1,10 +1,19 @@
 package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAdapter
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.FragmentLeaderboardFragmentBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayerDAO
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayerDAOSQLLiteImplementation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +30,14 @@ class leaderboard_fragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var binding: FragmentLeaderboardFragmentBinding
+    private lateinit var playerAdapter: PlayerAdapter
+
+
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,8 +50,27 @@ class leaderboard_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_leaderboard_fragment, container, false)
+
+
+
+
+
+
+        binding = FragmentLeaderboardFragmentBinding.inflate(inflater, container, false)
+
+
+
+
+
+
+
+        return binding.root
+
+
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        loadPlayers()
     }
 
     companion object {
@@ -56,4 +92,34 @@ class leaderboard_fragment : Fragment() {
                 }
             }
     }
+
+    fun addWinner(player: Player, context: Context){
+        val playerDAO = PlayerDAOSQLLiteImplementation(context)
+
+        playerAdapter = PlayerAdapter(context,
+            playerDAO .getPlayers() as ArrayList<Player>
+        )
+
+        playerDAO.addPlayer(player)
+        playerAdapter.addPlayer(player)
+
+    }
+
+
+    fun loadPlayers(){
+        val playerDAO = PlayerDAOSQLLiteImplementation(requireContext())
+        playerAdapter = PlayerAdapter(requireContext(),
+            playerDAO .getPlayers() as ArrayList<Player>
+        )
+        with(binding.winnersList){
+            layoutManager = LinearLayoutManager(requireContext(),
+                LinearLayoutManager.VERTICAL,
+                false)
+//            layoutManager = GridLayoutManager(applicationContext,2)
+            adapter = playerAdapter
+        }
+    }
+
+
+
 }

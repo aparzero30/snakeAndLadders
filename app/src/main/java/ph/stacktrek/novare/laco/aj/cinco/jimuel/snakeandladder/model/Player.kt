@@ -7,16 +7,15 @@ import java.time.LocalDateTime
 
 open class Player(var username: String?) : Parcelable {
     lateinit var userID: String
-        private set
     var imagePath:String = ""
     var position: Int = -1;
     var lastPosition: Int = 0;
-    var place: Int = 0;
+
 
     constructor(parcel: Parcel) : this(parcel.readString()) {
         imagePath = parcel.readString().toString()
         position = parcel.readInt()
-        place = parcel.readInt()
+
         lastPosition = parcel.readInt()
     }
 
@@ -24,7 +23,6 @@ open class Player(var username: String?) : Parcelable {
         parcel.writeString(username)
         parcel.writeString(imagePath)
         parcel.writeInt(position)
-        parcel.writeInt(place)
         parcel.writeInt(lastPosition)
     }
 

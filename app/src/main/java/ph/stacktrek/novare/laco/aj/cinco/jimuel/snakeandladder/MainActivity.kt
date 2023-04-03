@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +24,7 @@ import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.adapters.PlayerAd
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.ActivityMainBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.AddPlayerBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.MapLegendBinding
+import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.MusicBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.WinnerPageBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.PlayerDAO
@@ -39,10 +41,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var parentView: ViewGroup
     private lateinit var recyclerView: RecyclerView
-    private lateinit var winner: Player
     private var page = 0
     private var playerCount = 5
 
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,8 +55,12 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
+
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.pokemon)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
 
 
@@ -91,6 +97,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.mapLegend.setOnClickListener {
             showMapLegends().show()
+        }
+
+        binding.music.setOnClickListener {
+            showMusicSettings().show()
         }
 
         binding.addButton.setOnClickListener {
@@ -364,8 +374,6 @@ class MainActivity : AppCompatActivity() {
 
     fun setWinner(player: Player) {
         val fragment = leaderboard_fragment.newInstance("param1", "param2")
-//        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment)
-//            .commit()
         fragment.addWinner(player, applicationContext)
     }
 
@@ -373,4 +381,46 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+    fun stopMusic(){
+        mediaPlayer.stop()
     }
+
+    fun startMusic(){
+        mediaPlayer.start()
+    }
+
+    fun startMusic1(){
+        stopMusic()
+        mediaPlayer = MediaPlayer.create(this, R.raw.pokemon)
+        mediaPlayer.start()
+    }
+
+
+    fun startMusic2(){
+        stopMusic()
+        mediaPlayer = MediaPlayer.create(this, R.raw.space)
+        mediaPlayer.start()
+    }
+
+    fun showMusicSettings(): Dialog {
+        return this!!.let {
+            val builder = AlertDialog.Builder(it)
+            var dialogueMusicSettingsBinding: MusicBinding =
+                MusicBinding.inflate(it.layoutInflater)
+            with(builder) {
+
+                setNeutralButton("CLOSE", DialogInterface.OnClickListener { dialog, id ->
+
+                })
+
+                setView(dialogueMusicSettingsBinding.root)
+                create()
+            }
+        }
+    }
+
+
+
+
+}

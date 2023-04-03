@@ -240,7 +240,8 @@ class BoardFragment : Fragment() {
                 createBoard(boardView)
                 binding.rollButton.isEnabled = false
 
-
+                boardView.removeAllViews()
+                createBoard(boardView)
 
             }else
                 mainActivity.updatePlayerList(players1)

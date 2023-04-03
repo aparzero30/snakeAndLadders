@@ -8,12 +8,8 @@
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\wormhole.png"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby4.jpg.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby4.jpg"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar1.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar1.png"
+        "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\layout_music.xml.flat",
+        "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\layout\\music.xml"
     },
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\mipmap-hdpi_ic_launcher.webp.flat",
@@ -22,6 +18,10 @@
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_protal_snake.png.flat",
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\protal_snake.png"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_music.xml.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/music.xml"
     },
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_avatar4.png.flat",
@@ -42,14 +42,6 @@
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\layout_map_legend.xml.flat",
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\layout\\map_legend.xml"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar4.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar4.png"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby3.jpg.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby3.jpg"
     },
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\layout_winner_page.xml.flat",
@@ -76,16 +68,16 @@
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\lobby2.jpg"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby1.jpg.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby1.jpg"
-    },
-    {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\layout_activity_leader.xml.flat",
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\layout\\activity_leader.xml"
     },
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\raw_space.mp3.flat",
+        "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\raw\\space.mp3"
     },
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_avatar3.png.flat",
@@ -110,6 +102,10 @@
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_board_board.jpg.flat",
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\board_board.jpg"
+    },
+    {
+        "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_music.png.flat",
+        "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\music.png"
     },
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -138,10 +134,6 @@
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\xml_backup_rules.xml.flat",
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar3.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar3.png"
     },
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\mipmap-xxhdpi_ic_launcher.webp.flat",
@@ -212,14 +204,6 @@
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\board_ladder.png"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar2.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar2.png"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby5.jpg.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby5.jpg"
-    },
-    {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_leader_wizard.png.flat",
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\leader_wizard.png"
     },
@@ -240,16 +224,12 @@
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\hover.xml"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar5.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar5.png"
-    },
-    {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_hover_add.xml.flat",
         "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\hover_add.xml"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby2.jpg.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby2.jpg"
+        "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\raw_pokemon.mp3.flat",
+        "source": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\raw\\pokemon.mp3"
     },
     {
         "merged": "C:\\Users\\arvi.laco\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_avatar5.png.flat",

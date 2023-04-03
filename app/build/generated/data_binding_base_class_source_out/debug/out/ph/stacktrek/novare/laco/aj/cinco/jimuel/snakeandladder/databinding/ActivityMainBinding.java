@@ -42,6 +42,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final AppCompatImageView mapLegend;
 
   @NonNull
+  public final AppCompatImageView music;
+
+  @NonNull
   public final RecyclerView playersList;
 
   @NonNull
@@ -60,9 +63,9 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull AppCompatButton addButton, @NonNull Guideline bottomGuideline,
       @NonNull ConstraintLayout fragmentContainerLeaderboard, @NonNull FrameLayout home,
       @NonNull Guideline leftGuideline, @NonNull AppCompatImageView mapLegend,
-      @NonNull RecyclerView playersList, @NonNull Guideline rightGuideline,
-      @NonNull AppCompatButton startButton, @NonNull Guideline topGuideline,
-      @NonNull AppCompatImageView trophy) {
+      @NonNull AppCompatImageView music, @NonNull RecyclerView playersList,
+      @NonNull Guideline rightGuideline, @NonNull AppCompatButton startButton,
+      @NonNull Guideline topGuideline, @NonNull AppCompatImageView trophy) {
     this.rootView = rootView;
     this.addButton = addButton;
     this.bottomGuideline = bottomGuideline;
@@ -70,6 +73,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.home = home;
     this.leftGuideline = leftGuideline;
     this.mapLegend = mapLegend;
+    this.music = music;
     this.playersList = playersList;
     this.rightGuideline = rightGuideline;
     this.startButton = startButton;
@@ -136,6 +140,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.music;
+      AppCompatImageView music = ViewBindings.findChildViewById(rootView, id);
+      if (music == null) {
+        break missingId;
+      }
+
       id = R.id.players_list;
       RecyclerView playersList = ViewBindings.findChildViewById(rootView, id);
       if (playersList == null) {
@@ -167,8 +177,8 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, addButton, bottomGuideline,
-          fragmentContainerLeaderboard, home, leftGuideline, mapLegend, playersList, rightGuideline,
-          startButton, topGuideline, trophy);
+          fragmentContainerLeaderboard, home, leftGuideline, mapLegend, music, playersList,
+          rightGuideline, startButton, topGuideline, trophy);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -4,6 +4,7 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -23,12 +24,17 @@ public final class FragmentLeaderboardFragmentBinding implements ViewBinding {
   public final ConstraintLayout fragmentContainer;
 
   @NonNull
+  public final TextView leaderboard;
+
+  @NonNull
   public final RecyclerView winnersList;
 
   private FragmentLeaderboardFragmentBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout fragmentContainer, @NonNull RecyclerView winnersList) {
+      @NonNull ConstraintLayout fragmentContainer, @NonNull TextView leaderboard,
+      @NonNull RecyclerView winnersList) {
     this.rootView = rootView;
     this.fragmentContainer = fragmentContainer;
+    this.leaderboard = leaderboard;
     this.winnersList = winnersList;
   }
 
@@ -61,6 +67,12 @@ public final class FragmentLeaderboardFragmentBinding implements ViewBinding {
     missingId: {
       ConstraintLayout fragmentContainer = (ConstraintLayout) rootView;
 
+      id = R.id.leaderboard;
+      TextView leaderboard = ViewBindings.findChildViewById(rootView, id);
+      if (leaderboard == null) {
+        break missingId;
+      }
+
       id = R.id.winners_list;
       RecyclerView winnersList = ViewBindings.findChildViewById(rootView, id);
       if (winnersList == null) {
@@ -68,7 +80,7 @@ public final class FragmentLeaderboardFragmentBinding implements ViewBinding {
       }
 
       return new FragmentLeaderboardFragmentBinding((ConstraintLayout) rootView, fragmentContainer,
-          winnersList);
+          leaderboard, winnersList);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

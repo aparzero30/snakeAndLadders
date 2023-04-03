@@ -6,6 +6,7 @@ color bg_color
 color black
 color hover
 color hover_image
+color legend_color
 color player_color
 color purple_200
 color purple_500

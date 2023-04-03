@@ -111,6 +111,7 @@ id topGuideline
 id trophy
 id trophy_frame
 id trophy_photo
+id volume
 id winner_frame
 id winner_name
 id winner_page

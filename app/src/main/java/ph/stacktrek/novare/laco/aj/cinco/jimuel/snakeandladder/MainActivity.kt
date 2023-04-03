@@ -2,18 +2,17 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.FragmentManager
@@ -45,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     private var playerCount = 5
 
     private lateinit var mediaPlayer: MediaPlayer
+    private var musicOn:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -382,26 +382,32 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun stopMusic(){
-        mediaPlayer.stop()
-    }
+
 
     fun startMusic(){
         mediaPlayer.start()
     }
 
     fun startMusic1(){
-        stopMusic()
+        pauseMusic()
         mediaPlayer = MediaPlayer.create(this, R.raw.pokemon)
         mediaPlayer.start()
     }
 
 
     fun startMusic2(){
-        stopMusic()
+        pauseMusic()
         mediaPlayer = MediaPlayer.create(this, R.raw.space)
         mediaPlayer.start()
     }
+
+    fun pauseMusic(){
+        mediaPlayer.pause()
+    }
+
+
+
+
 
     fun showMusicSettings(): Dialog {
         return this!!.let {
@@ -409,6 +415,61 @@ class MainActivity : AppCompatActivity() {
             var dialogueMusicSettingsBinding: MusicBinding =
                 MusicBinding.inflate(it.layoutInflater)
             with(builder) {
+
+
+
+                val radioGroup =  dialogueMusicSettingsBinding.radioGroup
+
+                radioGroup.setOnCheckedChangeListener{ group, checkedId ->
+
+                    if(musicOn){
+                        when (checkedId) {
+                            R.id.radio_button1 -> startMusic1()
+                            R.id.radio_button2  -> startMusic2()
+                        }
+
+                    }
+                }
+
+
+                dialogueMusicSettingsBinding.switch1.isChecked = musicOn
+                dialogueMusicSettingsBinding.switch1.setOnClickListener{
+                    musicOn = if(musicOn){
+                        pauseMusic()
+                        false
+                    }else{
+                        startMusic()
+                        true
+                    }
+
+
+                }
+
+                val volumeSeekBar = dialogueMusicSettingsBinding.volume
+                volumeSeekBar.max = 100
+                volumeSeekBar.progress = 50
+                val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+                val maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+
+                volumeSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                        // Set the media volume based on the SeekBar progress
+                        val volume = (maxVolume * (progress / 100f)).toInt()
+                        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volume, 0)
+                    }
+
+                    override fun onStartTrackingTouch(seekBar: SeekBar) {
+                        // Do nothing
+                    }
+
+                    override fun onStopTrackingTouch(seekBar: SeekBar) {
+                        // Do nothing
+                    }
+                })
+
+
+
+
 
                 setNeutralButton("CLOSE", DialogInterface.OnClickListener { dialog, id ->
 

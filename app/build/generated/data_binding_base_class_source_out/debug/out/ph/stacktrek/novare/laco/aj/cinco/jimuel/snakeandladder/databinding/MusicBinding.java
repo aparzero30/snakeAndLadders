@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.Switch;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,15 +37,19 @@ public final class MusicBinding implements ViewBinding {
   @NonNull
   public final Switch switch1;
 
+  @NonNull
+  public final SeekBar volume;
+
   private MusicBinding(@NonNull ConstraintLayout rootView, @NonNull ConstraintLayout musicDialogue,
       @NonNull RadioButton radioButton1, @NonNull RadioButton radioButton2,
-      @NonNull RadioGroup radioGroup, @NonNull Switch switch1) {
+      @NonNull RadioGroup radioGroup, @NonNull Switch switch1, @NonNull SeekBar volume) {
     this.rootView = rootView;
     this.musicDialogue = musicDialogue;
     this.radioButton1 = radioButton1;
     this.radioButton2 = radioButton2;
     this.radioGroup = radioGroup;
     this.switch1 = switch1;
+    this.volume = volume;
   }
 
   @Override
@@ -100,8 +105,14 @@ public final class MusicBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.volume;
+      SeekBar volume = ViewBindings.findChildViewById(rootView, id);
+      if (volume == null) {
+        break missingId;
+      }
+
       return new MusicBinding((ConstraintLayout) rootView, musicDialogue, radioButton1,
-          radioButton2, radioGroup, switch1);
+          radioButton2, radioGroup, switch1, volume);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

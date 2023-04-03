@@ -361,9 +361,7 @@ class MainActivity : AppCompatActivity() {
 
         playerAdapter.notifyDataSetChanged()
     }
-    fun resetPlayerList(){
 
-    }
     fun setPlayerCount(){
        playerCount = 5
     }

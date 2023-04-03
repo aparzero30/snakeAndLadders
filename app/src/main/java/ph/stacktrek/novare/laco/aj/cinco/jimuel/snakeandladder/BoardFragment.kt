@@ -209,6 +209,7 @@ class BoardFragment : Fragment() {
                 players1.clear()
                 mainActivity.updatePlayerList(players1)
                 mainActivity.removeBoardFragment()
+                mainActivity.setPlayerCount()
                 binding.rollButton.isEnabled = false
 
             }

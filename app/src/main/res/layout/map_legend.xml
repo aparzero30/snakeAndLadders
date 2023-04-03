@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="600dp"
+    android:layout_height="340dp"
+    android:background="@color/bg_color"
+    tools:context=".MainActivity"
+    android:id="@+id/map_legend">
+
+
+    <FrameLayout
+        android:id="@+id/ladder_frame"
+        android:layout_width="250dp"
+        android:layout_height="290dp"
+        android:background="@color/player_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        android:layout_marginLeft="30dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/ladder_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/board_ladder"
+            android:layout_gravity="top|center"
+            />
+
+
+        <TextView
+            android:id="@+id/description_ladder"
+            android:layout_width="180dp"
+            android:textColor="@color/white"
+            android:layout_height="150dp"
+            android:text="1 --> 38
+\n4 --> 14
+\n8 --> 30
+\n21 --> 42
+\n28 -->	76
+\n50 --> 67
+\n71 --> 92
+\n80 --> 99"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="50dp"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:layout_marginLeft="25dp"
+            android:textAllCaps="true"
+            tools:ignore="RtlCompat" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/snake_frame"
+        android:layout_width="250dp"
+        android:layout_height="290dp"
+        android:background="@color/player_color"
+        app:layout_constraintStart_toEndOf="@id/ladder_frame"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        android:layout_marginLeft="40dp"
+        >
+
+
+        <ImageView
+            android:id="@+id/snake_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/board_snake"
+            android:layout_gravity="top|center"
+            />
+
+
+        <TextView
+            android:id="@+id/description_snake"
+            android:layout_width="180dp"
+            android:textColor="@color/white"
+            android:layout_height="150dp"
+            android:text="\n32 --> 10
+\n36 --> 6
+\n48 --> 26
+\n62 --> 18
+\n88 --> 24
+\n95 --> 56
+\n97 --> 78"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="35dp"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:layout_marginLeft="25dp"
+            android:textAllCaps="true"
+            tools:ignore="RtlCompat" />
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

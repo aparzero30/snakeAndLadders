@@ -2823,6 +2823,7 @@ drawable mtrl_switch_thumb_unchecked_pressed
 drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
+drawable music
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -3167,6 +3168,8 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id music
+id music_dialogue
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3222,6 +3225,9 @@ id pressed
 id progress_circular
 id progress_horizontal
 id radio
+id radio_button1
+id radio_button2
+id radio_group
 id ratio
 id rectangles
 id reverseSawtooth
@@ -3311,6 +3317,7 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id switch1
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3578,6 +3585,7 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout mtrl_search_bar
 layout mtrl_search_view
+layout music
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -3595,6 +3603,8 @@ layout winner_page
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw pokemon
+raw space
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

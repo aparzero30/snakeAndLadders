@@ -39,10 +39,10 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Guideline leftGuideline;
 
   @NonNull
-  public final RecyclerView playersList;
+  public final AppCompatImageView mapLegend;
 
   @NonNull
-  public final AppCompatImageView quit;
+  public final RecyclerView playersList;
 
   @NonNull
   public final Guideline rightGuideline;
@@ -59,8 +59,8 @@ public final class ActivityMainBinding implements ViewBinding {
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppCompatButton addButton, @NonNull Guideline bottomGuideline,
       @NonNull ConstraintLayout fragmentContainerLeaderboard, @NonNull FrameLayout home,
-      @NonNull Guideline leftGuideline, @NonNull RecyclerView playersList,
-      @NonNull AppCompatImageView quit, @NonNull Guideline rightGuideline,
+      @NonNull Guideline leftGuideline, @NonNull AppCompatImageView mapLegend,
+      @NonNull RecyclerView playersList, @NonNull Guideline rightGuideline,
       @NonNull AppCompatButton startButton, @NonNull Guideline topGuideline,
       @NonNull AppCompatImageView trophy) {
     this.rootView = rootView;
@@ -69,8 +69,8 @@ public final class ActivityMainBinding implements ViewBinding {
     this.fragmentContainerLeaderboard = fragmentContainerLeaderboard;
     this.home = home;
     this.leftGuideline = leftGuideline;
+    this.mapLegend = mapLegend;
     this.playersList = playersList;
-    this.quit = quit;
     this.rightGuideline = rightGuideline;
     this.startButton = startButton;
     this.topGuideline = topGuideline;
@@ -130,15 +130,15 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.players_list;
-      RecyclerView playersList = ViewBindings.findChildViewById(rootView, id);
-      if (playersList == null) {
+      id = R.id.map_legend;
+      AppCompatImageView mapLegend = ViewBindings.findChildViewById(rootView, id);
+      if (mapLegend == null) {
         break missingId;
       }
 
-      id = R.id.quit;
-      AppCompatImageView quit = ViewBindings.findChildViewById(rootView, id);
-      if (quit == null) {
+      id = R.id.players_list;
+      RecyclerView playersList = ViewBindings.findChildViewById(rootView, id);
+      if (playersList == null) {
         break missingId;
       }
 
@@ -167,7 +167,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, addButton, bottomGuideline,
-          fragmentContainerLeaderboard, home, leftGuideline, playersList, quit, rightGuideline,
+          fragmentContainerLeaderboard, home, leftGuideline, mapLegend, playersList, rightGuideline,
           startButton, topGuideline, trophy);
     }
     String missingId = rootView.getResources().getResourceName(id);

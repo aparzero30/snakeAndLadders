@@ -35,6 +35,7 @@ drawable lobby5
 drawable main_quit
 drawable main_sound
 drawable main_trophy
+drawable map_legend
 id add_button
 id add_player
 id avatar
@@ -73,7 +74,6 @@ id player_position
 id playername
 id players_list
 id playerturn
-id quit
 id result_frame
 id result_text
 id rightGuideline

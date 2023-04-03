@@ -4,20 +4,8 @@
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-xhdpi/ic_launcher.webp"
-    },
-    {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_dice.png.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/dice.png"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar3.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar3.png"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_activity_leader.xml.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/activity_leader.xml"
     },
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-xhdpi_ic_launcher_round.webp.flat",
@@ -36,12 +24,84 @@
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/fragment_leaderboard_fragment.xml"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-anydpi-v26/ic_launcher_round.xml"
-    },
-    {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_leader_wizard.png.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/leader_wizard.png"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar4.png.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar4.png"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby3.jpg.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby3.jpg"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_map_legend.xml.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/map_legend.xml"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_leader_back.png.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/leader_back.png"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_dice_result.xml.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/dice_result.xml"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby1.jpg.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby1.jpg"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-anydpi-v33/ic_launcher.xml"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_map_legend.png.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/map_legend.png"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_board_snake.png.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/board_snake.png"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_board_ladder.png.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/board_ladder.png"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_ic_launcher_background.xml.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar3.png.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar3.png"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_activity_leader.xml.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/activity_leader.xml"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -64,48 +124,16 @@
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/add_player.xml"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_leader_wizard.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/leader_wizard.png"
-    },
-    {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_main_quit.png.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/main_quit.png"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-hdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar4.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar4.png"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby3.jpg.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby3.jpg"
     },
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_main_trophy.png.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/main_trophy.png"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_map_legend.xml.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/map_legend.xml"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_leader_back.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/leader_back.png"
-    },
-    {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/xml_data_extraction_rules.xml.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/xml/data_extraction_rules.xml"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_dice_result.xml.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/dice_result.xml"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby1.jpg.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/lobby1.jpg"
     },
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -120,16 +148,8 @@
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/tile.xml"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-anydpi-v33_ic_launcher.xml.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-anydpi-v33/ic_launcher.xml"
-    },
-    {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar2.png.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/avatar2.png"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_board_snake.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/board_snake.png"
     },
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_lobby5.jpg.flat",
@@ -144,10 +164,6 @@
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/winner_page.xml"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_board_ladder.png.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/board_ladder.png"
-    },
-    {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_player_user.xml.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/player_user.xml"
     },
@@ -156,16 +172,8 @@
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/confetti.png"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-mdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/xml_backup_rules.xml.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/xml/backup_rules.xml"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_ic_launcher_background.xml.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/drawable/ic_launcher_background.xml"
     },
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_board_board.jpg.flat",
@@ -174,10 +182,6 @@
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-hdpi/ic_launcher_round.webp"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
         "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/drawable_avatar5.png.flat",

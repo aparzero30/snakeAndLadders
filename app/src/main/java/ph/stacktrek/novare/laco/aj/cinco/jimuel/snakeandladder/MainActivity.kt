@@ -37,11 +37,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var parentView: ViewGroup
     private lateinit var recyclerView: RecyclerView
-    private lateinit var button: Button
-
     private var page = 0
-
     private var playerCount = 5
+
 
 
 

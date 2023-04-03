@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
@@ -22,9 +21,6 @@ import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.R;
 public final class FragmentLeaderboardFragmentBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
-
-  @NonNull
-  public final AppCompatImageView back;
 
   @NonNull
   public final Guideline bottomGuideline;
@@ -72,14 +68,13 @@ public final class FragmentLeaderboardFragmentBinding implements ViewBinding {
   public final Guideline topGuideline;
 
   private FragmentLeaderboardFragmentBinding(@NonNull ConstraintLayout rootView,
-      @NonNull AppCompatImageView back, @NonNull Guideline bottomGuideline,
-      @NonNull ConstraintLayout fragmentContainer, @NonNull FrameLayout frame1,
-      @NonNull FrameLayout frame2, @NonNull FrameLayout frame3, @NonNull FrameLayout frame4,
-      @NonNull FrameLayout frame5, @NonNull TextView leaderboard, @NonNull Guideline leftGuideline,
-      @NonNull ImageView top1, @NonNull ImageView top2, @NonNull ImageView top3,
-      @NonNull ImageView top4, @NonNull ImageView top5, @NonNull Guideline topGuideline) {
+      @NonNull Guideline bottomGuideline, @NonNull ConstraintLayout fragmentContainer,
+      @NonNull FrameLayout frame1, @NonNull FrameLayout frame2, @NonNull FrameLayout frame3,
+      @NonNull FrameLayout frame4, @NonNull FrameLayout frame5, @NonNull TextView leaderboard,
+      @NonNull Guideline leftGuideline, @NonNull ImageView top1, @NonNull ImageView top2,
+      @NonNull ImageView top3, @NonNull ImageView top4, @NonNull ImageView top5,
+      @NonNull Guideline topGuideline) {
     this.rootView = rootView;
-    this.back = back;
     this.bottomGuideline = bottomGuideline;
     this.fragmentContainer = fragmentContainer;
     this.frame1 = frame1;
@@ -124,12 +119,6 @@ public final class FragmentLeaderboardFragmentBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.back;
-      AppCompatImageView back = ViewBindings.findChildViewById(rootView, id);
-      if (back == null) {
-        break missingId;
-      }
-
       id = R.id.bottomGuideline;
       Guideline bottomGuideline = ViewBindings.findChildViewById(rootView, id);
       if (bottomGuideline == null) {
@@ -216,9 +205,9 @@ public final class FragmentLeaderboardFragmentBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentLeaderboardFragmentBinding((ConstraintLayout) rootView, back,
-          bottomGuideline, fragmentContainer, frame1, frame2, frame3, frame4, frame5, leaderboard,
-          leftGuideline, top1, top2, top3, top4, top5, topGuideline);
+      return new FragmentLeaderboardFragmentBinding((ConstraintLayout) rootView, bottomGuideline,
+          fragmentContainer, frame1, frame2, frame3, frame4, frame5, leaderboard, leftGuideline,
+          top1, top2, top3, top4, top5, topGuideline);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -41,6 +41,7 @@ class BoardFragment : Fragment() {
     private var currentPlayer = 0;
     private lateinit var player:Player;
     private var players1 = ArrayList<Player>()
+    private lateinit var winner:Player;
 
 
 
@@ -90,22 +91,22 @@ class BoardFragment : Fragment() {
 
 
 
-            val initPos = players1.get(currentPlayer).position;
+            val initPos = players1[currentPlayer].position;
 
 
             if(initPos!=-1){
 
-                updateTile(players1.get(currentPlayer), boardView, requireContext())
+                updateTile(players1[currentPlayer], boardView, requireContext())
             }
 
-            players1.get(currentPlayer).lastPosition =  players1.get(currentPlayer).position
+            players1[currentPlayer].lastPosition =  players1[currentPlayer].position
 
             if(initPos!=-1){
 
-                removeLastPosition( players1.get(currentPlayer).lastPosition , boardView, requireContext())
+                removeLastPosition( players1[currentPlayer].lastPosition , boardView, requireContext())
             }
 
-            var rollPosition  = rollDice(players1.get(currentPlayer).position)
+            var rollPosition  = rollDice(players1[currentPlayer].position)
 
 
 
@@ -195,16 +196,13 @@ class BoardFragment : Fragment() {
 
 
 
-
-//            rollPosition = 99
-
-
-            players1.get(currentPlayer).position = rollPosition
+            players1[currentPlayer].position = rollPosition
             updatePlayerTiles(boardView)
 
             if(rollPosition==99){
 
-                players1.get(currentPlayer).position =  -1
+                winner = players1[currentPlayer]
+                players1[currentPlayer].position =  -1
                 mainActivity.updatePlayerList(players1)
                 players1.clear()
                 mainActivity.updatePlayerList(players1)
@@ -227,7 +225,7 @@ class BoardFragment : Fragment() {
             }
 
             if (players != null) {
-                if (!players.isEmpty()) {
+                if (players.isNotEmpty()) {
                     setUPCurrentPlayer(players?.get( currentPlayer) ?: player)
                 }
             }
@@ -462,10 +460,10 @@ class BoardFragment : Fragment() {
                 }
 
                 if(leftToRight){
-                    count = count - 1;
+                    count -= 1;
                 }
                 else{
-                    count = count +1;
+                    count += 1;
                 }
 
                 rowView.addView(cellView)

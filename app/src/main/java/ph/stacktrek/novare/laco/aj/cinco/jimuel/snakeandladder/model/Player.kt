@@ -49,7 +49,3 @@ open class Player(var username: String?) : Parcelable {
 
 
 
-class Winner(username: String) : Player(username){
-    lateinit var lastPlayed: LocalDateTime
-        private set
-}

@@ -27,11 +27,11 @@ ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-transition-1.2.0-25 
 ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-lifecycle-viewmodel-savedstate-2.5.1-26 C:\Users\arvi.laco\.gradle\caches\transforms-3\e563143b9fc1ce0498763a9307e41937\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
 ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-drawerlayout-1.1.1-27 C:\Users\arvi.laco\.gradle\caches\transforms-3\ee697cd08c56d0500233d93c4fc892de\transformed\drawerlayout-1.1.1\res
 ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-constraintlayout-2.1.4-28 C:\Users\arvi.laco\.gradle\caches\transforms-3\fe5722c2d28764b765710ac6c318c6e8\transformed\constraintlayout-2.1.4\res
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-pngs-29 C:\Users\arvi.laco\Desktop\New folder\snakeAndLadders\app\build\generated\res\pngs\debug
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-resValues-30 C:\Users\arvi.laco\Desktop\New folder\snakeAndLadders\app\build\generated\res\resValues\debug
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-rs-31 C:\Users\arvi.laco\Desktop\New folder\snakeAndLadders\app\build\generated\res\rs\debug
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-packageDebugResources-32 C:\Users\arvi.laco\Desktop\New folder\snakeAndLadders\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-packageDebugResources-33 C:\Users\arvi.laco\Desktop\New folder\snakeAndLadders\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34 C:\Users\arvi.laco\Desktop\New folder\snakeAndLadders\app\build\intermediates\merged_res\debug
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-debug-35 C:\Users\arvi.laco\Desktop\New folder\snakeAndLadders\app\src\debug\res
-ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36 C:\Users\arvi.laco\Desktop\New folder\snakeAndLadders\app\src\main\res
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-pngs-29 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\generated\res\pngs\debug
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-resValues-30 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\generated\res\resValues\debug
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-rs-31 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\generated\res\rs\debug
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-packageDebugResources-32 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-packageDebugResources-33 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\build\intermediates\merged_res\debug
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-debug-35 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\src\debug\res
+ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36 C:\Users\arvi.laco\AndroidStudioProjects\snakeAndLadders\app\src\main\res

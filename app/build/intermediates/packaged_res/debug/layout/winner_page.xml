@@ -54,7 +54,7 @@
         android:id="@+id/trophy_frame"
         android:layout_width="220dp"
         android:layout_height="290dp"
-        android:background="@color/player_color"
+        android:background="@color/bg_color"
         app:layout_constraintStart_toEndOf="@id/winner_frame"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

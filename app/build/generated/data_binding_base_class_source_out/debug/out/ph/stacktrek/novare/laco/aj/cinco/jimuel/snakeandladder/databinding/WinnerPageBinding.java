@@ -32,10 +32,10 @@ public final class WinnerPageBinding implements ViewBinding {
   public final AppCompatButton playAgain;
 
   @NonNull
-  public final ImageView snakePhoto;
+  public final FrameLayout trophyFrame;
 
   @NonNull
-  public final FrameLayout trophyFrame;
+  public final ImageView trophyPhoto;
 
   @NonNull
   public final FrameLayout winnerFrame;
@@ -54,7 +54,7 @@ public final class WinnerPageBinding implements ViewBinding {
 
   private WinnerPageBinding(@NonNull ConstraintLayout rootView, @NonNull AppCompatButton close,
       @NonNull ImageView confetti, @NonNull AppCompatButton playAgain,
-      @NonNull ImageView snakePhoto, @NonNull FrameLayout trophyFrame,
+      @NonNull FrameLayout trophyFrame, @NonNull ImageView trophyPhoto,
       @NonNull FrameLayout winnerFrame, @NonNull TextView winnerName,
       @NonNull ConstraintLayout winnerPage, @NonNull ImageView winnerPhoto,
       @NonNull TextView winnerText) {
@@ -62,8 +62,8 @@ public final class WinnerPageBinding implements ViewBinding {
     this.close = close;
     this.confetti = confetti;
     this.playAgain = playAgain;
-    this.snakePhoto = snakePhoto;
     this.trophyFrame = trophyFrame;
+    this.trophyPhoto = trophyPhoto;
     this.winnerFrame = winnerFrame;
     this.winnerName = winnerName;
     this.winnerPage = winnerPage;
@@ -116,15 +116,15 @@ public final class WinnerPageBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.snake_photo;
-      ImageView snakePhoto = ViewBindings.findChildViewById(rootView, id);
-      if (snakePhoto == null) {
-        break missingId;
-      }
-
       id = R.id.trophy_frame;
       FrameLayout trophyFrame = ViewBindings.findChildViewById(rootView, id);
       if (trophyFrame == null) {
+        break missingId;
+      }
+
+      id = R.id.trophy_photo;
+      ImageView trophyPhoto = ViewBindings.findChildViewById(rootView, id);
+      if (trophyPhoto == null) {
         break missingId;
       }
 
@@ -155,7 +155,7 @@ public final class WinnerPageBinding implements ViewBinding {
       }
 
       return new WinnerPageBinding((ConstraintLayout) rootView, close, confetti, playAgain,
-          snakePhoto, trophyFrame, winnerFrame, winnerName, winnerPage, winnerPhoto, winnerText);
+          trophyFrame, trophyPhoto, winnerFrame, winnerName, winnerPage, winnerPhoto, winnerText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

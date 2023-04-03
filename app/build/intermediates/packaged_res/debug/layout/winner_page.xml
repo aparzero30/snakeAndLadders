@@ -6,6 +6,7 @@
     android:layout_height="400dp"
     android:background="@color/bg_color"
     tools:context=".MainActivity"
+    android:padding="10dp"
     android:id="@+id/winner_page">
 
     <FrameLayout
@@ -17,8 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="10dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="70dp"
         >
 
 
@@ -28,6 +28,7 @@
             android:layout_height="230dp"
             android:src="@drawable/lobby1"
             android:layout_gravity="top|center"
+            android:layout_marginTop="10dp"
             />
 
 
@@ -51,23 +52,24 @@
 
     <FrameLayout
         android:id="@+id/trophy_frame"
-        android:layout_width="250dp"
+        android:layout_width="220dp"
         android:layout_height="290dp"
         android:background="@color/player_color"
         app:layout_constraintStart_toEndOf="@id/winner_frame"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="10dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="70dp"
         >
 
 
         <ImageView
-            android:id="@+id/snake_photo"
-            android:layout_width="230dp"
-            android:layout_height="230dp"
+            android:id="@+id/trophy_photo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:src="@drawable/main_trophy"
             android:layout_gravity="top|center"
+            android:layout_marginTop="30dp"
             />
 
 
@@ -78,7 +80,7 @@
             android:layout_height="50dp"
             android:text="WINNER!"
             android:layout_marginTop="240dp"
-            android:layout_marginLeft="26dp"
+            android:layout_marginLeft="10dp"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textAllCaps="true"
@@ -105,10 +107,10 @@
             android:background="@color/start_color"
             android:textColor="@color/white"
             android:text="Play again"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/close"
             app:layout_constraintBottom_toBottomOf="@id/winner_page"
-            android:layout_marginRight="65dp"
-            android:layout_marginBottom="15dp"
+            app:layout_constraintEnd_toEndOf="@id/trophy_frame"
+            android:layout_marginLeft="5dp"
             />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -118,11 +120,10 @@
             android:background="@color/add_color"
             android:textColor="@color/white"
             android:text="Close"
-            app:layout_constraintBottom_toBottomOf="@id/winner_page"
+            app:layout_constraintEnd_toStartOf="@id/play_again"
             tools:ignore="MissingConstraints"
-            android:layout_marginBottom="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="55dp"
+            app:layout_constraintStart_toStartOf="@id/winner_frame"
+            app:layout_constraintBottom_toBottomOf="@id/winner_page"
+            android:layout_marginRight="5dp"
             />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

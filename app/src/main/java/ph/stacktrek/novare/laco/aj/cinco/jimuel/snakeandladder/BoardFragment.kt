@@ -2,11 +2,14 @@ package ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.ContentValues
 import android.content.Context
 import android.content.DialogInterface
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +26,8 @@ import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.MapLe
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.PortalDialogueBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.databinding.WinnerPageBinding
 import ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.model.Player
+import java.io.File
+import java.io.FileOutputStream
 import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
@@ -119,7 +124,6 @@ class BoardFragment : Fragment() {
             if(rollPosition >99){
                 var excess  = rollPosition  - 99;
                 rollPosition = 99 - excess;
-                showPortalMessage(rollPosition+1,ladder).show()
             }
 
 
@@ -212,17 +216,19 @@ class BoardFragment : Fragment() {
             updatePlayerTiles(boardView)
 
             //delete this
-//            rollPosition = 99;
+//            rollPosition = 99
 
 
             if(rollPosition==99){
 
+                winner = players1[currentPlayer]
 
 
 
                 removeLastPosition( 99 , boardView, requireContext())
-                showWinnerDialogue(binding).show()
-                winner = players1[currentPlayer]
+                showWinnerDialogue(binding,winner).show()
+
+
                 players1[currentPlayer].position =  -1
                 updatePlayerTiles(boardView)
 
@@ -274,10 +280,23 @@ class BoardFragment : Fragment() {
             with(builder) {
 
 
-                portalDialogueBinding.portaltxt.text = "You've Entered A Portal, you are sent back to ${position}"
+                portalDialogueBinding.portaltxt.text = "You've entered a red portal! You are sent back to ${position}!"
 
                 if(ladder){
-                    portalDialogueBinding.portaltxt.text = "You've Entered A Portal, you are transported to ${position}"
+
+
+                    val image = BitmapFactory.decodeResource(
+                        requireContext().resources,
+                        R.drawable.protal_snake
+                    )
+                    val file = File(requireContext().filesDir, "avatar2.jpg")
+                    val fileOutputStream = FileOutputStream(file)
+                    image.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+                    fileOutputStream.flush()
+                    fileOutputStream.close()
+                    val bitmap = BitmapFactory.decodeFile(file.absolutePath)
+                    portalDialogueBinding.portalImg.setImageBitmap(bitmap)
+                    portalDialogueBinding.portaltxt.text = "You've entered a blue portal! You are transported to ${position}!"
                 }
 
 
@@ -551,7 +570,7 @@ class BoardFragment : Fragment() {
 
 
 
-    fun showWinnerDialogue(binding: FragmentBoardBinding): Dialog {
+    fun showWinnerDialogue(binding: FragmentBoardBinding, player: Player): Dialog {
 
 
 
@@ -571,6 +590,22 @@ class BoardFragment : Fragment() {
                     // Get references to the "ADD" and "CANCEL" buttons
                     val playAgain = dialog.findViewById<AppCompatButton>(R.id.play_again)
                     val cancelButton = dialog.findViewById<AppCompatButton>(R.id.close)
+
+
+
+                    val imagePath = player.imagePath
+                    val file = File(imagePath)
+                    if (file.exists()) {
+                        val bitmap = BitmapFactory.decodeFile(file.absolutePath)
+                        dialogueWinnerPageBinding.winnerPhoto.setImageBitmap(bitmap)
+                    } else {
+                        Log.e(ContentValues.TAG, "File not found: $imagePath")
+                    }
+
+
+                    dialogueWinnerPageBinding.winnerName.text = player.username.toString()
+                    println( dialogueWinnerPageBinding.winnerText.text)
+
 
 
 

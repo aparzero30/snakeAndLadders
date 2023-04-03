@@ -12,10 +12,6 @@
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_music.xml.flat",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/music.xml"
-    },
-    {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_lobby1.jpg.flat",
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\lobby1.jpg"
     },
@@ -24,12 +20,12 @@
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\board_board.jpg"
     },
     {
-        "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_avatar4.png.flat",
-        "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\avatar4.png"
-    },
-    {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_leader_wizard.png.flat",
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\leader_wizard.png"
+    },
+    {
+        "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\drawable_avatar4.png.flat",
+        "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\drawable\\avatar4.png"
     },
     {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\raw_pokemon.mp3.flat",
@@ -138,6 +134,10 @@
     {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\raw_space.mp3.flat",
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\raw\\space.mp3"
+    },
+    {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:/layout_activity_main.xml.flat",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/activity_main.xml"
     },
     {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-merged_res-34:\\mipmap-xhdpi_ic_launcher_round.webp.flat",

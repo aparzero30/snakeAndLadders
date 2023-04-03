@@ -12,6 +12,10 @@
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\layout\\activity_main.xml"
     },
     {
+        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:/layout/activity_main.xml",
+        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:\\layout\\music.xml",
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\layout\\music.xml"
     },
@@ -38,10 +42,6 @@
     {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:\\layout\\activity_leader.xml",
         "source": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:\\layout\\activity_leader.xml"
-    },
-    {
-        "merged": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:/layout/music.xml",
-        "source": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-main-36:/layout/music.xml"
     },
     {
         "merged": "C:\\Users\\jimci\\.gradle\\daemon\\7.5\\ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.app-mergeDebugResources-33:\\layout\\player_user.xml",

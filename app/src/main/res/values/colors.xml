@@ -10,18 +10,22 @@
 
     <color name="bg_color">#32B092</color>
     <color name="add_color">#328fb0</color>
+    <color name="add_color_hover">#3AAED8</color>
     <color name="start_color">	#b03250</color>
+    <color name="start_color_hover">#DC4166</color>
     <color name="player_color">#2d9e83</color>
     <color name="tile1">#04606c</color>
     <color name="tile2">#33c1c8</color>
+    <color name="hover">#e8e4e4</color>
+    <color name="hover_image">#2d9e83</color>
 
 
 
 
 
-<!--    #00C696 - bg color-->
-<!--    #F8AA7F - start button color-->
-<!--    #7FF899 - add player button color, create player button color-->
-<!--    #30C7BE - player bg color-->
+    <!--    #00C696 - bg color-->
+    <!--    #F8AA7F - start button color-->
+    <!--    #7FF899 - add player button color, create player button color-->
+    <!--    #30C7BE - player bg color-->
 
 </resources>

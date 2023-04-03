@@ -65,15 +65,16 @@ class PlayerDAOSQLLiteImplementation(var context: Context): PlayerDAO {
             DatabaseHandler.TABLE_PLAYER_USER_NAME, DatabaseHandler.TABLE_PLAYER_IMAGE_PATH)
 
         try {
-            cursor = db.query(DatabaseHandler.TABLE_PLAYER,
+            cursor = db.query(
+                DatabaseHandler.TABLE_PLAYER,
                 columns,
                 null,
                 null,
                 null,
                 null,
-                null)
-
-
+                "${DatabaseHandler.TABLE_PLAYER_USERID} DESC",
+                "5"
+            )
         }catch (sqlException: SQLException){
             db.close()
             return result

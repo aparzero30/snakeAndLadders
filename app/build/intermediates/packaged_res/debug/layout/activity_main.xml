@@ -26,26 +26,30 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/trophy"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/main_trophy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topGuideline" />
+        app:layout_constraintTop_toTopOf="@+id/topGuideline"
+        android:background="@drawable/hover_image_buttons"
+        android:padding="5dp"/>
 
 
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/map_legend"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/map_legend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/trophy"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/topGuideline"
-        android:layout_marginRight="7dp"/>
+        android:layout_marginRight="7dp"
+        android:background="@drawable/hover_image_buttons"
+        android:padding="5dp"/>
 
 
 
@@ -100,8 +104,8 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/start_button"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@color/start_color"
+        android:layout_height="45dp"
+        android:background="@drawable/hover_start"
         android:textColor="@color/white"
         android:text="START"
         app:layout_constraintBottom_toBottomOf="@+id/bottomGuideline"
@@ -110,8 +114,8 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_button"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@color/add_color"
+        android:layout_height="45dp"
+        android:background="@drawable/hover_add"
         android:textColor="@color/white"
         android:text="ADD"
         app:layout_constraintBottom_toTopOf="@+id/start_button"

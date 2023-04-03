@@ -3,7 +3,7 @@
     android:layout_width="220dp"
     android:layout_height="62dp"
     android:background="@color/bg_color"
-    app:cardBackgroundColor="#32B092"
+    app:cardBackgroundColor="@color/bg_color"
     >
 
     <LinearLayout

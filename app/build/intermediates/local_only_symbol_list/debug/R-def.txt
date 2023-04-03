@@ -1,13 +1,17 @@
 R_DEF: Internal format may change without notice
 local
 color add_color
+color add_color_hover
 color bg_color
 color black
+color hover
+color hover_image
 color player_color
 color purple_200
 color purple_500
 color purple_700
 color start_color
+color start_color_hover
 color teal_200
 color teal_700
 color tile1
@@ -23,6 +27,10 @@ drawable board_ladder
 drawable board_snake
 drawable confetti
 drawable dice
+drawable hover
+drawable hover_add
+drawable hover_image_buttons
+drawable hover_start
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable leader_back
@@ -36,6 +44,7 @@ drawable main_quit
 drawable main_sound
 drawable main_trophy
 drawable map_legend
+drawable protal_snake
 drawable wormhole
 id add_button
 id add_player
@@ -93,6 +102,7 @@ id top5
 id topGuideline
 id trophy
 id trophy_frame
+id trophy_photo
 id winner_frame
 id winner_name
 id winner_page

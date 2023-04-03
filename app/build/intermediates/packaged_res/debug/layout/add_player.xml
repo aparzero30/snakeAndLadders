@@ -52,7 +52,8 @@
         app:layout_constraintTop_toTopOf="@id/avatar"
         app:layout_constraintEnd_toEndOf="@id/avatar"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
-
+        android:background="@drawable/hover"
+        android:padding="3dp"
         />
 
     <ImageView
@@ -65,7 +66,8 @@
         app:layout_constraintTop_toTopOf="@id/avatar"
         android:layout_marginLeft="40dp"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
-        />
+        android:background="@drawable/hover"
+        android:padding="3dp"/>
 
     <ImageView
         android:id="@+id/avatar3"
@@ -77,7 +79,8 @@
         app:layout_constraintTop_toTopOf="@id/avatar"
         android:layout_marginLeft="40dp"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
-        />
+        android:background="@drawable/hover"
+        android:padding="3dp"/>
 
     <ImageView
         android:id="@+id/avatar4"
@@ -89,7 +92,8 @@
         app:layout_constraintTop_toTopOf="@id/avatar"
         android:layout_marginRight="40dp"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
-        />
+        android:background="@drawable/hover"
+        android:padding="3dp"/>
 
     <ImageView
         android:id="@+id/avatar5"
@@ -101,7 +105,8 @@
         app:layout_constraintTop_toTopOf="@id/avatar"
         android:layout_marginRight="40dp"
         app:layout_constraintBottom_toBottomOf="@id/avatar"
-        />
+        android:background="@drawable/hover"
+        android:padding="3dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

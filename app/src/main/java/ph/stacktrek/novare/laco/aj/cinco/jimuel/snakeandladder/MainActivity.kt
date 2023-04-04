@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity() {
 
             binding.addButton.visibility = View.INVISIBLE
             binding.startButton.visibility = View.INVISIBLE
+            binding.icon.visibility = View.INVISIBLE
 
             val fragmentManager = supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
@@ -121,6 +122,8 @@ class MainActivity : AppCompatActivity() {
 
                 binding.addButton.visibility = View.INVISIBLE
                 binding.startButton.visibility = View.INVISIBLE
+                binding.icon.visibility = View.INVISIBLE
+
 
 
                 val fragmentManager = supportFragmentManager
@@ -312,6 +315,7 @@ class MainActivity : AppCompatActivity() {
         if (page == 1) {
             binding.addButton.visibility = View.VISIBLE
             binding.startButton.visibility = View.VISIBLE
+            binding.icon.visibility = View.VISIBLE
             page = 0;
         } else {
             page = page - 1;
@@ -349,6 +353,7 @@ class MainActivity : AppCompatActivity() {
         val backStackEntryCount = fragmentManager.backStackEntryCount
         binding.addButton.visibility = View.VISIBLE
         binding.startButton.visibility = View.VISIBLE
+        binding.icon.visibility = View.VISIBLE
 
 
         if (backStackEntryCount > 0) {

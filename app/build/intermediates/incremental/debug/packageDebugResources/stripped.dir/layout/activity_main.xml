@@ -129,6 +129,17 @@
         />
 
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icon"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:src="@drawable/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/start_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/hover_image_buttons" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

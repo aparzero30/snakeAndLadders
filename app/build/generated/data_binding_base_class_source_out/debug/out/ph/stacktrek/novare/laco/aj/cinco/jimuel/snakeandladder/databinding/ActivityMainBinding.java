@@ -36,6 +36,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final FrameLayout home;
 
   @NonNull
+  public final AppCompatImageView icon;
+
+  @NonNull
   public final Guideline leftGuideline;
 
   @NonNull
@@ -62,15 +65,17 @@ public final class ActivityMainBinding implements ViewBinding {
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
       @NonNull AppCompatButton addButton, @NonNull Guideline bottomGuideline,
       @NonNull ConstraintLayout fragmentContainerLeaderboard, @NonNull FrameLayout home,
-      @NonNull Guideline leftGuideline, @NonNull AppCompatImageView mapLegend,
-      @NonNull AppCompatImageView music, @NonNull RecyclerView playersList,
-      @NonNull Guideline rightGuideline, @NonNull AppCompatButton startButton,
-      @NonNull Guideline topGuideline, @NonNull AppCompatImageView trophy) {
+      @NonNull AppCompatImageView icon, @NonNull Guideline leftGuideline,
+      @NonNull AppCompatImageView mapLegend, @NonNull AppCompatImageView music,
+      @NonNull RecyclerView playersList, @NonNull Guideline rightGuideline,
+      @NonNull AppCompatButton startButton, @NonNull Guideline topGuideline,
+      @NonNull AppCompatImageView trophy) {
     this.rootView = rootView;
     this.addButton = addButton;
     this.bottomGuideline = bottomGuideline;
     this.fragmentContainerLeaderboard = fragmentContainerLeaderboard;
     this.home = home;
+    this.icon = icon;
     this.leftGuideline = leftGuideline;
     this.mapLegend = mapLegend;
     this.music = music;
@@ -128,6 +133,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.icon;
+      AppCompatImageView icon = ViewBindings.findChildViewById(rootView, id);
+      if (icon == null) {
+        break missingId;
+      }
+
       id = R.id.leftGuideline;
       Guideline leftGuideline = ViewBindings.findChildViewById(rootView, id);
       if (leftGuideline == null) {
@@ -177,7 +188,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ConstraintLayout) rootView, addButton, bottomGuideline,
-          fragmentContainerLeaderboard, home, leftGuideline, mapLegend, music, playersList,
+          fragmentContainerLeaderboard, home, icon, leftGuideline, mapLegend, music, playersList,
           rightGuideline, startButton, topGuideline, trophy);
     }
     String missingId = rootView.getResources().getResourceName(id);

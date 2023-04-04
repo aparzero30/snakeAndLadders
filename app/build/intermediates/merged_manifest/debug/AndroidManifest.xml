@@ -24,7 +24,6 @@
         android:icon="@drawable/app_ico"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.SnakeAndLadder" >
         <activity
             android:name="ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.LeaderActivity"

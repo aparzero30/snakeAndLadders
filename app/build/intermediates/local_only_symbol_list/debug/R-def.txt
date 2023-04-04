@@ -74,6 +74,7 @@ id frame4
 id frame5
 id framecard
 id home
+id icon
 id ladder_frame
 id ladder_photo
 id leaderboard

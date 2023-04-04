@@ -2711,6 +2711,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable app_ico
 drawable avatar1
 drawable avatar2
 drawable avatar3
@@ -2754,6 +2755,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable icon
 drawable leader_back
 drawable leader_wizard
 drawable lobby1

@@ -4,7 +4,7 @@
             "outputFile": "ph.stacktrek.novare.laco.aj.cinco.jimuel.snakeandladder.test.app-mergeDebugAndroidTestResources-4:/values-v28/values-v28.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\arvi.laco\\.gradle\\caches\\transforms-3\\9625a4369847c3660983c501a7b3626b\\transformed\\core-1.5.0\\res\\values-v28\\values.xml",
+                    "source": "C:\\Users\\jimci\\.gradle\\caches\\transforms-3\\9625a4369847c3660983c501a7b3626b\\transformed\\core-1.5.0\\res\\values-v28\\values.xml",
                     "from": {
                         "startLines": "4,13",
                         "startColumns": "0,0",

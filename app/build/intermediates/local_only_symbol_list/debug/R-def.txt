@@ -18,6 +18,7 @@ color teal_700
 color tile1
 color tile2
 color white
+drawable app_ico
 drawable avatar1
 drawable avatar2
 drawable avatar3
@@ -34,6 +35,7 @@ drawable hover_image_buttons
 drawable hover_start
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable icon
 drawable leader_back
 drawable leader_wizard
 drawable lobby1

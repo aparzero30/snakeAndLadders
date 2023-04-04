@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="add_color">#328fb0</color>
+    <color name="add_color_hover">#3AAED8</color>
+    <color name="bg_color">#32B092</color>
+    <color name="black">#FF000000</color>
+    <color name="hover">#e8e4e4</color>
+    <color name="hover_image">#2d9e83</color>
+    <color name="legend_color">#328fb0</color>
+    <color name="player_color">#2d9e83</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="start_color">	#b03250</color>
+    <color name="start_color_hover">#DC4166</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="tile1">#04606c</color>
+    <color name="tile2">#33c1c8</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Snake And Ladder</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name="Theme.SnakeAndLadder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>
